@@ -1,7 +1,11 @@
+import HeaderOuter from "./sections/HeaderOuter";
+import HeroSectionOuter from "./sections/HeroSectionOuter";
+
 export default function App() {
   return (
     <div>
-      <h1>Meu Projeto</h1>
+      <HeaderOuter />
+      <HeroSectionOuter />
     </div>
   );
 }
