@@ -1,5 +1,5 @@
-import HeaderOuter from "./sections/HeaderOuter";
-import HeroSectionOuter from "./sections/HeroSectionOuter";
+import HeaderOuter from "./sections/header/HeaderOuter";
+import HeroSectionOuter from "./sections/heroSectionOuters/HeroSectionOuter";
 
 export default function App() {
   return (

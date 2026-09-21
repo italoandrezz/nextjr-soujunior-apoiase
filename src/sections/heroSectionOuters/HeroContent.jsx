@@ -4,8 +4,8 @@ export default function HeroContent() {
     <div className="flex flex-col justify-center items-center gap-6 max-w-[48.875rem] w-full text-center">
       {/* Título Principal */}
       <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-white leading-tight tracking-tight">
-        Seu apoio mantém <br className="hidden sm:inline" />
-        oportunidades em movimento
+        Toda carreira tech precisa de <br className="hidden sm:inline" /> um
+        lugar para começar
       </h1>
 
       {/* Descrição */}
