@@ -1,7 +1,13 @@
+import HeaderOuter from "./sections/header/HeaderOuter";
+import HeroSectionOuter from "./sections/heroSectionOuters/HeroSectionOuter";
+import CauseSectionOuter from "./sections/heroSectionCause/CauseSectionOuter";
+
 export default function App() {
   return (
     <div>
-      <h1>Meu Projeto</h1>
+      <HeaderOuter />
+      <HeroSectionOuter />
+      <CauseSectionOuter />
     </div>
   );
 }
