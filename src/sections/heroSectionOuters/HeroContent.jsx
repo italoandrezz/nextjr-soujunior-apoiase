@@ -1,28 +1,31 @@
+import Button from "../../components/Button";
+import Typography from "../../components/Typography";
+
 export default function HeroContent() {
   return (
     /* Hero Content: gap-6 (24px), max-w-[48.875rem] (782px) */
     <div className="flex flex-col justify-center items-center gap-6 max-w-[48.875rem] w-full text-center">
       {/* Título Principal */}
-      <h1 className="text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-white leading-tight tracking-tight">
+      <Typography variant="h1" color="default" className="font-display font-bold text-[24px] leading-[32px] md:text-[32px] md:leading-[40px] lg:text-[48px] lg:leading-[56px]">
         Toda carreira tech precisa de <br className="hidden sm:inline" /> um
         lugar para começar
-      </h1>
+      </Typography>
 
       {/* Descrição */}
-      <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-[45rem]">
-        A SouJunior conecta profissionais em início ou transição de carreira a
-        projetos reais em tecnologia. Sua contribuição ajuda a manter essa
-        oportunidade gratuita para quem participa
-      </p>
+      <Typography variant="body-lg" color="default" className="text-gray-300 text-[14px] leading-[20px] md:text-[18px] md:leading-[24px] lg:text-[24px] lg:leading-[32px]">
+        Antes da primeira oportunidade, é preciso viver a profissão na prática. Na SouJunior, essa experiência acontece em projetos reais e colaborativos.
+      </Typography>
 
       {/* Ação (CTA + Legenda) */}
       <div className="flex flex-col items-center gap-3 pt-2">
-        <a
-          href="#apoiar"
-          className="bg-[#E5E7EB] hover:bg-white text-[#111827] text-sm font-semibold px-8 py-3 rounded-xl transition-all duration-200 active:scale-95 shadow-md"
-        >
-          Quero apoiar
-        </a>
+        <Button 
+        href="https://apoia.se/soujunior" 
+        variant="light" 
+        size="lg"
+        showArrow
+      >
+        <span>Quero apoiar</span>
+      </Button>
         <span className="text-xs text-gray-400 font-normal">
           A partir de R$ 2/mês pelo APOIA.se
         </span>
