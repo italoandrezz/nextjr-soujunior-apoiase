@@ -1,47 +1,45 @@
+import Button from "../../components/Button";
+import logo from "../../assets/images/icon-logomarca.svg";
+import Typography from "../../components/Typography";
+
 export default function HeaderInner() {
   return (
     /* Header Inner - Container com largura máxima de 1120px (70rem) */
     <div className="max-w-[70rem] w-full min-h-[2.5rem] flex items-center justify-between gap-4">
       {/* Logo */}
       <div className="flex items-center gap-2 cursor-pointer">
-        <div className="grid grid-cols-2 gap-0.5 w-5 h-5">
-          <span className="bg-white rounded-xs"></span>
-          <span className="bg-white rounded-xs"></span>
-          <span className="bg-white rounded-xs"></span>
-          <span className="bg-white rounded-xs"></span>
-        </div>
-        <span className="text-xl font-bold tracking-tight text-white">
-          SouJunior
-        </span>
+        <img src={logo} alt="SouJunior" className="h-8 w-auto" />
       </div>
 
       {/* Links de Navegação */}
-      <nav className="hidden md:flex items-center gap-8 text-sm text-gray-300">
-        <a href="#o-projeto" className="hover:text-white transition-colors">
-          O projeto
+      <nav className="hidden md:flex items-center gap-8 ml-auto">
+        <a href="#o-projeto" className="group">
+          <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
+            O projeto
+          </Typography>
         </a>
-        <a href="#a-comunidade" className="hover:text-white transition-colors">
-          A comunidade
+        <a href="#a-comunidade" className="group">
+          <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
+            A comunidade
+          </Typography>
         </a>
-        <a href="#como-apoiar" className="hover:text-white transition-colors">
-          Como apoiar
+        <a href="#como-apoiar" className="group">
+          <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
+            Como apoiar
+          </Typography>
         </a>
-        <a
-          href="#perguntas-frequentes"
-          className="hover:text-white transition-colors"
-        >
-          Perguntas frequentes
+        <a href="#perguntas-frequentes" className="group">
+          <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
+            Perguntas frequentes
+          </Typography>
         </a>
       </nav>
 
       {/* Botão Apoie Agora */}
       <div>
-        <a
-          href="#apoie-agora"
-          className="bg-[#3B82F6] hover:bg-blue-600 text-white text-sm font-medium px-6 py-2.5 rounded-xl transition-colors inline-block"
-        >
+        <Button href="https://apoia.se/soujunior" target="_blank" rel="noopener noreferrer" showArrow>
           Apoie agora
-        </a>
+        </Button>
       </div>
     </div>
   );
