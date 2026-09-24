@@ -5,7 +5,7 @@ import Typography from "../../components/Typography";
 export default function HeaderInner() {
   return (
     /* Header Inner - Container com largura máxima de 1120px (70rem) */
-    <div className="max-w-[70rem] w-full min-h-[2.5rem] flex items-center justify-between gap-4">
+    <div className="max-w-[70rem] w-full min-h-[2.5rem] flex items-center justify-between gap-8">
       {/* Logo */}
       <a
         href="/"

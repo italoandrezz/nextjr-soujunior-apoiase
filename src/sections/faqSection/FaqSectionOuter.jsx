@@ -13,7 +13,9 @@ export default function FaqSectionOuter() {
                 <AccordionDemo />
                 
                 <Button
-                    href="mailto:parcerias@soujunior.tech"
+                    href="https://chat.whatsapp.com/JJzCMlqMKlw1YOhOk7QB3W"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     showSupportAgent
                     className="rounded-[10px] px-5 py-3 text-[12px] text-[#00021A]"
                 >

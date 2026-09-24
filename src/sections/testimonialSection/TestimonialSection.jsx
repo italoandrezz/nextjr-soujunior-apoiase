@@ -53,8 +53,19 @@ export default function TestimonialSection() {
     );
   }
 
-  function showNext() {
+function showNext() {
     setActiveIndex((current) => (current + 1) % testimonials.length);
+  }
+
+  function getCardPosition(index) {
+    if (index === activeIndex) return "active";
+    const forwardDistance =
+      (index - activeIndex + testimonials.length) % testimonials.length;
+
+    if (forwardDistance === 1) return "next";
+    if (forwardDistance === 2) return "nextFar";
+    if (forwardDistance === 3) return "nextFarthest";
+    return "previous";
   }
 
   return (
@@ -73,31 +84,40 @@ export default function TestimonialSection() {
 
         <div
           aria-live="polite"
-          className="relative mx-auto mt-9 grid max-w-[58rem] md:mt-12"
+          className="relative mx-auto mt-9 grid max-w-[70rem] perspective-[1200px] md:mt-12"
         >
           <button
             type="button"
             onClick={showPrevious}
             aria-label="Exibir depoimento anterior"
-            className="absolute bottom-6 left-0 top-6 z-0 w-[52%] cursor-pointer rounded-3xl border border-[#46577E] bg-gradient-to-br from-[#1C2545] to-[#26355F] opacity-80 transition-opacity hover:opacity-100 focus-visible:z-20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:bottom-8 md:top-8"
+            className="absolute bottom-6 left-0 top-6 z-30 w-[16%] cursor-pointer rounded-l-3xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:bottom-8 md:top-8"
           />
           <button
             type="button"
             onClick={showNext}
             aria-label="Exibir próximo depoimento"
-            className="absolute bottom-6 right-0 top-6 z-0 w-[52%] cursor-pointer rounded-3xl border border-[#46577E] bg-gradient-to-bl from-[#1C2545] to-[#26355F] opacity-80 transition-opacity hover:opacity-100 focus-visible:z-20 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:bottom-8 md:top-8"
+            className="absolute bottom-6 right-0 top-6 z-30 w-[16%] cursor-pointer rounded-r-3xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:bottom-8 md:top-8"
           />
 
-          {testimonials.map((item, index) => (
-            <article
-              key={item.name}
-              aria-hidden={index !== activeIndex}
-              className={`relative z-10 col-start-1 row-start-1 mx-auto flex h-full w-[88%] flex-col rounded-3xl border border-[#53658E] bg-gradient-to-r from-[#222B4B] via-[#263155] to-[#29365F] p-6 shadow-2xl shadow-black/30 md:w-[78%] md:p-10 lg:w-[72%] lg:p-12 ${
-                index === activeIndex
-                  ? "visible opacity-100"
-                  : "invisible opacity-0"
-              }`}
-            >
+          {testimonials.map((item, index) => {
+            const position = getCardPosition(index);
+            const positionClasses = {
+              active: "z-20 translate-x-0 scale-100 opacity-100",
+              previous:
+                "pointer-events-none z-10 -translate-x-[8%] scale-[0.94] opacity-80",
+              next: "pointer-events-none z-[15] translate-x-[10%] scale-[0.94] opacity-80",
+              nextFar:
+                "pointer-events-none z-10 translate-x-[18%] scale-[0.86] opacity-65",
+              nextFarthest:
+                "pointer-events-none z-[5] translate-x-[26%] scale-[0.78] opacity-50",
+            };
+
+            return (
+              <article
+                key={item.name}
+                aria-hidden={position !== "active"}
+                className={`relative col-start-1 row-start-1 mx-auto flex h-full w-[92%] transform-gpu flex-col rounded-3xl border border-[#53658E] bg-gradient-to-r from-[#222B4B] via-[#263155] to-[#29365F] p-6 shadow-2xl shadow-black/30 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform motion-reduce:transform-none motion-reduce:transition-none md:w-[84%] md:p-10 lg:w-[80%] lg:p-12 ${positionClasses[position]}`}
+              >
               <blockquote className="font-funnel-sans text-sm italic leading-6 text-[#F4F4F6] md:text-base md:leading-7 lg:text-lg lg:leading-8">
                 “{item.quote}”
               </blockquote>
@@ -117,29 +137,11 @@ export default function TestimonialSection() {
                   </p>
                 </div>
               </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
 
-        <div
-          aria-label="Selecionar depoimento"
-          className="mt-5 flex justify-center gap-2"
-        >
-          {testimonials.map((item, index) => (
-            <button
-              key={item.name}
-              type="button"
-              onClick={() => setActiveIndex(index)}
-              aria-label={`Exibir depoimento de ${item.name}`}
-              aria-current={index === activeIndex ? "true" : undefined}
-              className={`h-2.5 cursor-pointer rounded-full transition-all focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] ${
-                index === activeIndex
-                  ? "w-8 bg-[#22D3EE]"
-                  : "w-2.5 bg-[#53658E] hover:bg-[#A9B8DC]"
-              }`}
-            />
-          ))}
-        </div>
       </div>
     </section>
   );
