@@ -7,9 +7,13 @@ export default function HeaderInner() {
     /* Header Inner - Container com largura máxima de 1120px (70rem) */
     <div className="max-w-[70rem] w-full min-h-[2.5rem] flex items-center justify-between gap-4">
       {/* Logo */}
-      <div className="flex items-center gap-2 cursor-pointer">
+      <a
+        href="/"
+        aria-label="Ir para o início"
+        className="flex items-center gap-2 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]"
+      >
         <img src={logo} alt="SouJunior" className="h-8 w-auto" />
-      </div>
+      </a>
 
       {/* Links de Navegação */}
       <nav className="hidden md:flex items-center gap-8 ml-auto">
