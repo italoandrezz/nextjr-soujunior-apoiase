@@ -64,7 +64,7 @@ function showNext() {
 
     if (forwardDistance === 1) return "next";
     if (forwardDistance === 2) return "nextFar";
-    if (forwardDistance === 3) return "nextFarthest";
+    if (forwardDistance === 3) return "previousFar";
     return "previous";
   }
 
@@ -104,19 +104,19 @@ function showNext() {
             const positionClasses = {
               active: "z-20 translate-x-0 scale-100 opacity-100",
               previous:
-                "pointer-events-none z-10 -translate-x-[8%] scale-[0.94] opacity-80",
-              next: "pointer-events-none z-[15] translate-x-[10%] scale-[0.94] opacity-80",
+                "pointer-events-none z-[15] -translate-x-[13%] scale-[0.88] opacity-100",
+              previousFar:
+                "pointer-events-none z-10 -translate-x-[24%] scale-[0.78] opacity-100",
+              next: "pointer-events-none z-[15] translate-x-[13%] scale-[0.88] opacity-100",
               nextFar:
-                "pointer-events-none z-10 translate-x-[18%] scale-[0.86] opacity-65",
-              nextFarthest:
-                "pointer-events-none z-[5] translate-x-[26%] scale-[0.78] opacity-50",
+                "pointer-events-none z-10 translate-x-[24%] scale-[0.78] opacity-100",
             };
 
             return (
               <article
                 key={item.name}
                 aria-hidden={position !== "active"}
-                className={`relative col-start-1 row-start-1 mx-auto flex h-full w-[92%] transform-gpu flex-col rounded-3xl border border-[#53658E] bg-gradient-to-r from-[#222B4B] via-[#263155] to-[#29365F] p-6 shadow-2xl shadow-black/30 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform motion-reduce:transform-none motion-reduce:transition-none md:w-[84%] md:p-10 lg:w-[80%] lg:p-12 ${positionClasses[position]}`}
+                className={`relative col-start-1 row-start-1 mx-auto flex h-full w-[92%] transform-gpu flex-col rounded-3xl border border-[#53658E] bg-gradient-to-r from-[#222B4B] via-[#263155] to-[#29365F] p-6 shadow-2xl shadow-black/30 transition-[opacity,transform,translate,scale] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform motion-reduce:transform-none motion-reduce:transition-none md:w-[84%] md:p-10 lg:w-[80%] lg:p-12 ${positionClasses[position]}`}
               >
               <blockquote className="font-funnel-sans text-sm italic leading-6 text-[#F4F4F6] md:text-base md:leading-7 lg:text-lg lg:leading-8">
                 “{item.quote}”

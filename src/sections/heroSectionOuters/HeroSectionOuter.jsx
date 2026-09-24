@@ -14,7 +14,7 @@ export default function HeroSectionOuter() {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover object-bottom"
       >
         <source src="/src/assets/video/videobackground.mp4" type="video/mp4" />
       </video>
