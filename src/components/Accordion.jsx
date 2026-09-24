@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 
 const faqItems = [
     {
@@ -29,18 +29,23 @@ const faqItems = [
 
 export function AccordionDemo() {
     const [openIndex, setOpenIndex] = useState(null);
+    const accordionId = useId();
 
     return (
         <div className="w-full max-w-[73.25rem]">
             {faqItems.map((item, index) => {
                 const isOpen = openIndex === index;
+                const triggerId = `${accordionId}-trigger-${index}`;
+                const panelId = `${accordionId}-panel-${index}`;
 
                 return (
                     <div key={item.question} className="border-b border-white/35">
                         <button
                             type="button"
+                            id={triggerId}
                             aria-expanded={isOpen}
-                            className="flex w-full items-center justify-between gap-6 py-5 text-left font-funnel-sans text-[16px] font-medium leading-6 text-[#F4F4F6] md:px-6 md:py-6 md:text-[18px]"
+                            aria-controls={panelId}
+                            className="flex w-full items-center justify-between gap-6 rounded-sm py-5 text-left font-funnel-sans text-[16px] font-medium leading-6 text-[#F4F4F6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE] md:px-6 md:py-6 md:text-[18px]"
                             onClick={() => setOpenIndex(isOpen ? null : index)}
                         >
                             <span>{item.question}</span>
@@ -50,6 +55,11 @@ export function AccordionDemo() {
                             />
                         </button>
                         <div
+                            id={panelId}
+                            role="region"
+                            aria-labelledby={triggerId}
+                            aria-hidden={!isOpen}
+                            inert={!isOpen}
                             className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
                         >
                             <div className="overflow-hidden">

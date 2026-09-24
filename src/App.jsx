@@ -4,6 +4,7 @@ import CauseSectionOuter from "./sections/heroSectionCause/CauseSectionOuter";
 import ImpactSectionOuter from "./sections/SectionImpactOuter/ImpactSectionOuter";
 import FaqSectionOuter from "./sections/faqSection/FaqSectionOuter";
 import FacaDiferencaSection from "./sections/facaDiferencaSection/FacaDiferencaSection";
+import NossaMetaSection from "./sections/nossaMetaSection/NossaMetaSection";
 
 export default function App() {
   return (

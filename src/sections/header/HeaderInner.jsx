@@ -17,22 +17,22 @@ export default function HeaderInner() {
 
       {/* Links de Navegação */}
       <nav className="hidden md:flex items-center gap-8 ml-auto">
-        <a href="#o-projeto" className="group">
+        <a href="#o-projeto" className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]">
           <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
             O projeto
           </Typography>
         </a>
-        <a href="#a-comunidade" className="group">
+        <a href="#a-comunidade" className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]">
           <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
             A comunidade
           </Typography>
         </a>
-        <a href="#como-apoiar" className="group">
+        <a href="#como-apoiar" className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]">
           <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
             Como apoiar
           </Typography>
         </a>
-        <a href="#perguntas-frequentes" className="group">
+        <a href="#perguntas-frequentes" className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]">
           <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
             Perguntas frequentes
           </Typography>
