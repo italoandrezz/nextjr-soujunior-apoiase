@@ -1,71 +1,68 @@
 import CauseTimelineItem from "./CauseTimeLineItem";
-import creditCardIcon from "../../assets/images/icon-credit-card.png";
-import hatIcon from "../../assets/images/icon-hat.png";
-import medalIcon from "../../assets/images/icon-medal.png";
-import projectIcon from "../../assets/images/icon-project.png";
-import balanceIcon from "../../assets/images/icon-scaled-balance.png";
+import Button from "../../components/Button";
+import Typography from "../../components/Typography";
+import businessIcon from "../../assets/images/business.svg";
+import checkCircleIcon from "../../assets/images/check-circle.svg";
+import flowchartIcon from "../../assets/images/flowchart.svg";
+import groupsIcon from "../../assets/images/groups.svg";
+import paymentArrowDownIcon from "../../assets/images/payment-arrow-down.svg";
 
 export default function CauseSectionInner() {
-  // Dados extraídos das imagens da Timeline do Figma
   const timelineData = [
     {
       id: 1,
-      title: "Quando você apoia",
-      description: "Sua contribuição ajuda a manter a comunidade ativa",
-      iconSrc: creditCardIcon
+      title: "Você contribui",
+      description: "Sua doação entra direto no custeio da operação da comunidade",
+      iconSrc: paymentArrowDownIcon
     },
     {
       id: 2,
-      title: "Mantemos a estrutura ativa",
-      description:
-        "Ferramentas, produtos e recursos digitais sustentam o trabalho dos times",
-      iconSrc: balanceIcon
+      title: "A estrutura segue de pé",
+      description: "Ferramentas, licenças e ambientes digitais que os times usam todo dia",
+      iconSrc: businessIcon
     },
     {
       id: 3,
-      title: "Projetos ganham vida em equipe",
-      description:
-        "Juniores, mentores e diferentes áreas colaboram em desafios reais",
-      iconSrc: projectIcon
+      title: "Os times entram em campo",
+      description: "Juniores e mentores de 12 áreas constroem produtos reais, com prazo e entrega",
+      iconSrc: groupsIcon
     },
     {
       id: 4,
-      title: "Conhecimento vira experiência",
-      description:
-        "Profissionais aplicam conhecimentos e desenvolvem novas habilidades",
-      iconSrc: hatIcon
+      title: "O júnior vive a rotina de verdade",
+      description: "Squad, cerimônias ágeis e feedback de mentor — o que curso nenhum ensina",
+      iconSrc: flowchartIcon
     },
     {
       id: 5,
-      title: "A experiência prepara para novos desafios",
-      description:
-        "Experiência, portfólio e networking fortalecem a preparação para o mercado tech",
-      iconSrc: medalIcon
+      title: "E chega preparado ao mercado",
+      description: "Sai com portfólio, vivência comprovada e rede de contatos para a primeira vaga",
+      iconSrc: checkCircleIcon
     }
   ];
 
   return (
-    /* Cause Section Inner - max-w-[70rem] = 1120px */
-    <div className="max-w-[70rem] w-full flex flex-col justify-center items-center gap-10 min-[391px]:gap-8 min-[835px]:gap-16">
-      {/* Section Header */}
-      <div className="max-w-[49.125rem] w-full flex flex-col items-center gap-4 text-center px-4">
-        <h2 className="text-2xl min-[391px]:text-3xl min-[835px]:text-4xl font-bold text-white tracking-tight leading-tight">
-          O que seu apoio coloca em jogo
-        </h2>
-        <p className="text-gray-300 text-sm min-[835px]:text-base leading-relaxed">
-          Ao apoiar a SouJunior, você impulsiona um ambiente onde conhecimento
-          vira prática
-        </p>
+    <div className="flex w-full max-w-[70rem] flex-col gap-14 min-[835px]:grid min-[835px]:grid-cols-[minmax(16rem,24rem)_minmax(0,1fr)] min-[835px]:gap-16 lg:gap-24">
+      <div className="flex flex-col items-start gap-6 min-[835px]:pt-1">
+        <Typography
+          variant="h1"
+          as="h2"
+          className="max-w-[22rem] tracking-tight"
+        >
+          Seu apoio pode ser a primeira oportunidade de alguém
+        </Typography>
+        <Typography variant="body-sm" as="p" className="max-w-[22rem]">
+          Ao apoiar a SouJunior, você impulsiona um ambiente onde{' '}
+          <Typography variant="body-sm" color="yellow" as="strong">
+            conhecimento vira prática
+          </Typography>
+        </Typography>
+        <Button href="https://apoia.se/soujunior" variant="light" showArrow>
+          Apoie agora
+        </Button>
       </div>
 
-      {/* Content / Timeline Container */}
-      <div className="w-full max-w-[20rem] min-[391px]:max-w-[23.5rem] min-[835px]:max-w-none relative flex flex-col min-[835px]:flex-row items-center min-[835px]:items-start justify-between gap-8 min-[835px]:gap-2">
-        {/* Linha da Timeline (Linha cinza conectando os círculos no Desktop) */}
-        <div className="hidden min-[835px]:block absolute top-6 left-6 right-6 h-[2px] bg-white z-0" />
-
-        <div className="min-[835px]:hidden absolute top-6 bottom-6 left-6 w-[2px] bg-white z-0" />
-
-        {/* Mapeamento dos 5 itens da Timeline */}
+      <div className="relative flex flex-col gap-0 pl-0 min-[500px]:pl-4 min-[835px]:pl-0">
         {timelineData.map((item) => (
           <CauseTimelineItem
             key={item.id}
@@ -73,6 +70,7 @@ export default function CauseSectionInner() {
             description={item.description}
             iconSrc={item.iconSrc}
             altText={item.title}
+            isLast={item.id === timelineData.length}
           />
         ))}
       </div>
