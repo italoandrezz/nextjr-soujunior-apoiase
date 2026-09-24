@@ -1,0 +1,119 @@
+import Button from "../../components/Button";
+import Typography from "../../components/Typography";
+import supportIllustration from "../../assets/images/illustration-apoiase.png";
+import ParticipationCard from "./ParticipationCard";
+
+const participationOptions = [
+  {
+    title: "Comunidade",
+    description:
+      "Contribua e ajude a manter esse espaço disponível para quem também está começando.",
+    icon: "community",
+  },
+  {
+    title: "Mentores e voluntários",
+    description:
+      "Além de compartilhar conhecimento, você também pode ajudar a sustentar um espaço que conecta a nossa comunidade.",
+    icon: "mentors",
+  },
+  {
+    title: "Empresas e patrocinadores",
+    description:
+      "Apoie um ambiente em que novos talentos desenvolvem experiência prática, colaboração e repertório profissional.",
+    icon: "companies",
+  },
+];
+
+const supportOptions = [
+  {
+    value: "A partir de R$ 9+/mês",
+    description:
+      "Possibilita a participação dos hackathons online da SouJunior.",
+    recommended: true,
+  },
+  {
+    value: "A partir de R$ 5+/mês",
+    description:
+      "Inclui acesso ao Guia Iniciante TI e permite apoiar com valores maiores.",
+  },
+  {
+    value: "A partir de R$ 2/mês",
+    description: "Acesso ao grupo para conhecer os projetos.",
+  },
+];
+
+export default function FacaDiferencaSection() {
+  return (
+    <section
+      id="como-apoiar"
+      aria-labelledby="faca-diferenca-title"
+      className="w-full bg-[#00021A] px-4 py-16 md:px-8 md:py-20 lg:px-20 lg:py-24"
+    >
+      <div className="mx-auto w-full max-w-[70rem]">
+        <Typography
+          id="faca-diferenca-title"
+          variant="h2"
+          className="text-left"
+        >
+          Faça a diferença na SouJunior
+        </Typography>
+        <p className="mt-3 font-funnel-sans text-xs font-semibold uppercase leading-4 tracking-[0.04em] text-[#A9A9A9] md:text-sm">
+          Escolha como fazer parte desse movimento
+        </p>
+
+        <div className="mt-8 grid grid-cols-1 gap-4 md:mt-10 md:grid-cols-3 lg:mt-12 lg:gap-6">
+          {participationOptions.map((option) => (
+            <ParticipationCard key={option.title} {...option} />
+          ))}
+        </div>
+
+        <div className="mt-10 grid grid-cols-1 items-center gap-8 md:mt-14 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)] md:gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-20">
+          <div className="order-2 flex min-w-0 flex-col gap-4 md:order-1 lg:max-w-[34rem]">
+            {supportOptions.map((option) => (
+              <article
+                key={option.value}
+                className={`rounded-xl border p-5 md:p-6 ${
+                  option.recommended
+                    ? "border-[#3C7EF9]/50 bg-gradient-to-r from-[#0A1662]/45 to-[#173871]"
+                    : "border-[#242731] bg-gradient-to-r from-[#080D27] to-[#102A61]"
+                }`}
+              >
+                {option.recommended && (
+                  <p className="mb-4 inline-flex rounded-full bg-[#22D3EE] px-3 py-1 font-funnel-sans text-[0.625rem] font-bold uppercase leading-none text-[#00021A]">
+                    Recomendado
+                  </p>
+                )}
+                <h3 className="font-funnel-display text-base font-semibold leading-6 text-[#F4F4F6] md:text-lg">
+                  {option.value}
+                </h3>
+                <p className="mt-2 font-funnel-sans text-sm leading-5 text-[#A9A9A9]">
+                  {option.description}
+                </p>
+              </article>
+            ))}
+
+            <p className="mt-2 max-w-[32rem] font-funnel-sans text-xs leading-5 text-[#A9A9A9] md:text-sm">
+              Quer contribuir com outro valor? Escolha diretamente no APOIA.se e
+              realize o pagamento com segurança.
+            </p>
+            <Button
+              href="https://apoia.se/soujunior"
+              showArrow
+              className="mt-1 w-fit"
+            >
+              Quero apoiar
+            </Button>
+          </div>
+
+          <div className="order-1 flex min-w-0 justify-center md:order-2 md:justify-end">
+            <img
+              src={supportIllustration}
+              alt="Mascote da SouJunior ao lado de um celular exibindo a campanha no APOIA.se"
+              className="h-auto w-full max-w-[20rem] object-contain md:max-w-[24rem] lg:max-w-[31rem]"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
