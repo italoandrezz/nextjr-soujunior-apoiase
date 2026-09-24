@@ -6,6 +6,7 @@ import FacaDiferencaSection from "./sections/facaDiferencaSection/FacaDiferencaS
 import NossaMetaSection from "./sections/nossaMetaSection/NossaMetaSection";
 import TestimonialSection from "./sections/testimonialSection/TestimonialSection";
 import ImpactSection from "./sections/impactSection/ImpactSection";
+import FooterOuter from "./sections/footer/FooterOuter";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <ImpactSection />
         <TestimonialSection />
         <FaqSectionOuter />
+        <FooterOuter />
       </main>
     </div>
   );
