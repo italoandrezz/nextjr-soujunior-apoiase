@@ -47,9 +47,9 @@ const supportOptions = [
 export default function FacaDiferencaSection() {
   return (
     <section
-      id="como-apoiar"
+      id="a-comunidade"
       aria-labelledby="faca-diferenca-title"
-      className="w-full bg-[#00021A] px-4 py-16 md:px-8 md:py-20 lg:px-20 lg:py-24"
+      className="w-full scroll-mt-20 bg-[#00021A] px-4 py-16 md:px-8 md:py-20 lg:px-20 lg:py-24"
     >
       <div className="mx-auto w-full max-w-[70rem]">
         <Typography
@@ -69,7 +69,10 @@ export default function FacaDiferencaSection() {
           ))}
         </div>
 
-        <div className="mt-10 grid grid-cols-1 items-center gap-8 md:mt-14 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)] md:gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-20">
+        <div
+          id="como-apoiar"
+          className="mt-10 grid scroll-mt-44 grid-cols-1 items-center gap-8 md:mt-14 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)] md:gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-20"
+        >
           <div className="order-2 flex min-w-0 flex-col gap-4 md:order-1 lg:max-w-[34rem]">
             {supportOptions.map((option) => (
               <a
