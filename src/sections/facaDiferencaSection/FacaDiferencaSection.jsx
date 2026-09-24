@@ -70,9 +70,13 @@ export default function FacaDiferencaSection() {
         <div className="mt-10 grid grid-cols-1 items-center gap-8 md:mt-14 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)] md:gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-20">
           <div className="order-2 flex min-w-0 flex-col gap-4 md:order-1 lg:max-w-[34rem]">
             {supportOptions.map((option) => (
-              <article
+              <a
                 key={option.value}
-                className={`rounded-xl border p-5 md:p-6 ${
+                href="https://apoia.se/soujunior"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${option.value}: apoiar a SouJunior no APOIA.se`}
+                className={`block rounded-xl border p-5 transition-colors hover:border-[#22D3EE] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:p-6 ${
                   option.recommended
                     ? "border-[#3C7EF9]/50 bg-gradient-to-r from-[#0A1662]/45 to-[#173871]"
                     : "border-[#242731] bg-gradient-to-r from-[#080D27] to-[#102A61]"
@@ -89,7 +93,7 @@ export default function FacaDiferencaSection() {
                 <p className="mt-2 font-funnel-sans text-sm leading-5 text-[#A9A9A9]">
                   {option.description}
                 </p>
-              </article>
+              </a>
             ))}
 
             <p className="mt-2 max-w-[32rem] font-funnel-sans text-xs leading-5 text-[#A9A9A9] md:text-sm">
