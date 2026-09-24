@@ -17,7 +17,7 @@ export default function HeaderInner() {
 
       {/* Links de Navegação */}
       <nav className="hidden md:flex items-center gap-8 ml-auto">
-        <a href="#o-projeto" className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]">
+        <a href="#a-comunidade" className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]">
           <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
             O projeto
           </Typography>
