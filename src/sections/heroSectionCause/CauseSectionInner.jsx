@@ -1,4 +1,9 @@
 import CauseTimelineItem from "./CauseTimeLineItem";
+import creditCardIcon from "../../assets/images/icon-credit-card.png";
+import hatIcon from "../../assets/images/icon-hat.png";
+import medalIcon from "../../assets/images/icon-medal.png";
+import projectIcon from "../../assets/images/icon-project.png";
+import balanceIcon from "../../assets/images/icon-scaled-balance.png";
 
 export default function CauseSectionInner() {
   // Dados extraídos das imagens da Timeline do Figma
@@ -7,35 +12,35 @@ export default function CauseSectionInner() {
       id: 1,
       title: "Quando você apoia",
       description: "Sua contribuição ajuda a manter a comunidade ativa",
-      iconSrc: "/src/assets/images/icon-credit-card.png"
+      iconSrc: creditCardIcon
     },
     {
       id: 2,
       title: "Mantemos a estrutura ativa",
       description:
         "Ferramentas, produtos e recursos digitais sustentam o trabalho dos times",
-      iconSrc: "/src/assets/images/icon-scaled-balance.png"
+      iconSrc: balanceIcon
     },
     {
       id: 3,
       title: "Projetos ganham vida em equipe",
       description:
         "Juniores, mentores e diferentes áreas colaboram em desafios reais",
-      iconSrc: "/src/assets/images/icon-project.png"
+      iconSrc: projectIcon
     },
     {
       id: 4,
       title: "Conhecimento vira experiência",
       description:
         "Profissionais aplicam conhecimentos e desenvolvem novas habilidades",
-      iconSrc: "/src/assets/images/icon-hat.png"
+      iconSrc: hatIcon
     },
     {
       id: 5,
       title: "A experiência prepara para novos desafios",
       description:
         "Experiência, portfólio e networking fortalecem a preparação para o mercado tech",
-      iconSrc: "/src/assets/images/icon-medal.png"
+      iconSrc: medalIcon
     }
   ];
 

@@ -9,11 +9,13 @@ export default function App() {
   return (
     <div>
       <HeaderOuter />
-      <HeroSectionOuter />
-      <CauseSectionOuter />
-      <NossaMetaSection />
-      <FacaDiferencaSection />
-      <FaqSectionOuter />
+      <main>
+        <HeroSectionOuter />
+        <CauseSectionOuter />
+        <NossaMetaSection />
+        <FacaDiferencaSection />
+        <FaqSectionOuter />
+      </main>
     </div>
   );
 }
