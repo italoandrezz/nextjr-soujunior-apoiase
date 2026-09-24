@@ -5,6 +5,7 @@ import FaqSectionOuter from "./sections/faqSection/FaqSectionOuter";
 import FacaDiferencaSection from "./sections/facaDiferencaSection/FacaDiferencaSection";
 import NossaMetaSection from "./sections/nossaMetaSection/NossaMetaSection";
 import TestimonialSection from "./sections/testimonialSection/TestimonialSection";
+import ImpactSection from "./sections/impactSection/ImpactSection";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <CauseSectionOuter />
         <NossaMetaSection />
         <FacaDiferencaSection />
+        <ImpactSection />
         <TestimonialSection />
         <FaqSectionOuter />
       </main>

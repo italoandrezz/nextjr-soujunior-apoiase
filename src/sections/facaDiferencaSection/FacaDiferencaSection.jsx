@@ -28,13 +28,13 @@ const participationOptions = [
 
 const supportOptions = [
   {
-    value: "A partir de R$ 9+/mês",
+    value: "A partir de R$ 9/mês",
     description:
       "Possibilita a participação dos hackathons online da SouJunior.",
     recommended: true,
   },
   {
-    value: "A partir de R$ 5+/mês",
+    value: "A partir de R$ 5/mês",
     description:
       "Inclui acesso ao Guia Iniciante TI e permite apoiar com valores maiores.",
   },
@@ -47,9 +47,9 @@ const supportOptions = [
 export default function FacaDiferencaSection() {
   return (
     <section
-      id="como-apoiar"
+      id="a-comunidade"
       aria-labelledby="faca-diferenca-title"
-      className="w-full bg-[#00021A] px-4 py-16 md:px-8 md:py-20 lg:px-20 lg:py-24"
+      className="w-full scroll-mt-20 bg-[#00021A] px-4 py-16 md:px-8 md:py-20 lg:px-20 lg:py-24"
     >
       <div className="mx-auto w-full max-w-[70rem]">
         <Typography
@@ -69,7 +69,10 @@ export default function FacaDiferencaSection() {
           ))}
         </div>
 
-        <div className="mt-10 grid grid-cols-1 items-center gap-8 md:mt-14 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)] md:gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-20">
+        <div
+          id="como-apoiar"
+          className="mt-10 grid scroll-mt-44 grid-cols-1 items-center gap-8 md:mt-14 md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.9fr)] md:gap-10 lg:mt-16 lg:grid-cols-2 lg:gap-20"
+        >
           <div className="order-2 flex min-w-0 flex-col gap-4 md:order-1 lg:max-w-[34rem]">
             {supportOptions.map((option) => (
               <a
@@ -78,23 +81,25 @@ export default function FacaDiferencaSection() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${option.value}. ${option.description} Apoiar a SouJunior no APOIA.se, abre em nova aba.`}
-                className={`block rounded-xl border p-5 transition-colors hover:border-[#22D3EE] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:p-6 ${
+                className={`group relative block overflow-hidden rounded-xl border p-5 transition-colors duration-300 before:absolute before:inset-0 before:bg-[rgba(60,126,249,0.72)] before:opacity-0 before:transition-opacity before:duration-300 hover:border-[#22D3EE] hover:before:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:p-6 ${
                   option.recommended
                     ? "border-[#3C7EF9]/50 bg-gradient-to-r from-[#0A1662]/45 to-[#173871]"
                     : "border-[#242731] bg-gradient-to-r from-[#080D27] to-[#102A61]"
                 }`}
               >
-                {option.recommended && (
-                  <p className="mb-4 inline-flex rounded-full bg-[#22D3EE] px-3 py-1 font-funnel-sans text-[0.625rem] font-bold uppercase leading-none text-[#00021A]">
-                    Recomendado
+                <div className="relative z-10">
+                  {option.recommended && (
+                    <p className="mb-4 inline-flex rounded-full bg-[#22D3EE] px-3 py-1 font-funnel-sans text-[0.625rem] font-bold uppercase leading-none text-[#00021A]">
+                      Recomendado
+                    </p>
+                  )}
+                  <h3 className="font-funnel-display text-base font-semibold leading-6 text-[#F4F4F6] md:text-lg">
+                    {option.value}
+                  </h3>
+                  <p className="mt-2 font-funnel-sans text-sm leading-5 text-[#A9A9A9] transition-colors duration-300 group-hover:text-[#F4F4F6]">
+                    {option.description}
                   </p>
-                )}
-                <h3 className="font-funnel-display text-base font-semibold leading-6 text-[#F4F4F6] md:text-lg">
-                  {option.value}
-                </h3>
-                <p className="mt-2 font-funnel-sans text-sm leading-5 text-[#A9A9A9]">
-                  {option.description}
-                </p>
+                </div>
               </a>
             ))}
 
