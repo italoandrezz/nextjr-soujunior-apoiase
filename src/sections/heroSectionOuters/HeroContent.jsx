@@ -1,5 +1,6 @@
 import Button from "../../components/Button";
 import Typography from "../../components/Typography";
+import { APOIA_SE_URL } from "../../constants/links";
 
 export default function HeroContent() {
   return (
@@ -19,7 +20,7 @@ export default function HeroContent() {
       {/* Ação (CTA + Legenda) */}
       <div className="flex flex-col items-center gap-3 pt-2">
         <Button 
-        href="https://apoia.se/soujunior" 
+        href={APOIA_SE_URL}
         variant="light" 
         size="lg"
         showArrow

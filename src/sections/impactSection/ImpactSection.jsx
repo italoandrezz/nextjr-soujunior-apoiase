@@ -1,45 +1,13 @@
 import Typography from "../../components/Typography";
-
-const impactMetrics = [
-  {
-    value: "120+",
-    label: "Membros ativos",
-  },
-  {
-    value: "35+",
-    label: "Mentores",
-  },
-  {
-    value: "50+",
-    label: "No mercado de trabalho",
-  },
-];
+import { impactMetrics } from "../../data/siteData";
+import useSpotlight from "../../hooks/useSpotlight";
 
 function ImpactCard({ value, label }) {
-  function handlePointerMove(event) {
-    if (
-      event.pointerType === "touch" ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      return;
-    }
-
-    const card = event.currentTarget;
-    const bounds = card.getBoundingClientRect();
-
-    card.style.setProperty("--spotlight-x", `${event.clientX - bounds.left}px`);
-    card.style.setProperty("--spotlight-y", `${event.clientY - bounds.top}px`);
-    card.style.setProperty("--spotlight-opacity", "1");
-  }
-
-  function handlePointerLeave(event) {
-    event.currentTarget.style.setProperty("--spotlight-opacity", "0");
-  }
+  const spotlightProps = useSpotlight();
 
   return (
     <div
-      onPointerMove={handlePointerMove}
-      onPointerLeave={handlePointerLeave}
+      {...spotlightProps}
       className="relative flex min-h-40 overflow-hidden rounded-xl border border-[#242731] bg-gradient-to-br from-[#080D27] to-[#102A61] p-6 text-center shadow-lg shadow-black/10 md:min-h-48 lg:min-h-52"
     >
       <span

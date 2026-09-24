@@ -1,12 +1,7 @@
 import Button from "../../components/Button";
 import Typography from "../../components/Typography";
-
-const campaignGoal = {
-  monthlyGoal: "R$ 1.500/mês",
-  currentAmount: "R$ 767",
-  progress: 51.13,
-  supporters: 116,
-};
+import { APOIA_SE_URL } from "../../constants/links";
+import { campaignGoal } from "../../data/siteData";
 
 export default function NossaMetaSection() {
   return (
@@ -28,7 +23,7 @@ export default function NossaMetaSection() {
             {campaignGoal.monthlyGoal}
           </Typography>
           <Button
-            href="https://apoia.se/soujunior"
+            href={APOIA_SE_URL}
             showArrow
             className="mt-6"
           >
