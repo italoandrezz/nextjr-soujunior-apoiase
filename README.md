@@ -22,12 +22,13 @@ A aplicação direciona os usuários interessados em contribuir para a campanha 
 ```text
 src/
 ├── assets/
+│   ├── images/
+│   └── video/
 ├── components/
-│   ├── ui/
-│   └── layout/
-├── sections/
 ├── constants/
-├── styles/
+├── data/
+├── hooks/
+├── sections/
 ├── App.jsx
 ├── index.css
 └── main.jsx
