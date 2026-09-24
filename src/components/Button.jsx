@@ -13,7 +13,11 @@ export default function Button({
 
   // 2. Esquemas de cores (Variantes)
   const variants = {
-    primary: "bg-[#F3F4F6] text-[#00021A] hover:bg-[#3C7EF9] hover:text-[#F3F4F6] pressed:bg-[#0E14BF]"};
+    primary:
+      "bg-[#F3F4F6] text-[#00021A] hover:bg-[#3C7EF9] hover:text-[#F3F4F6] active:bg-[#0E14BF]",
+    light:
+      "bg-[#F3F4F6] text-[#00021A] hover:bg-[#3C7EF9] hover:text-[#F3F4F6] active:bg-[#0E14BF]",
+  };
 
   // 3. Tamanhos / Paddings
   const sizes = {
@@ -24,8 +28,17 @@ export default function Button({
   const finalClasses = `${baseClasses} ${variants[variant] || variants.primary} ${sizes[size] || sizes.md} ${showSupportAgent ? 'gap-2' : ''} ${className}`;
 
   if (href) {
+    const isExternalLink = /^https?:\/\//i.test(href);
+
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={finalClasses} {...props}>
+      <a
+        href={href}
+        className={finalClasses}
+        {...(isExternalLink
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+        {...props}
+      >
         {children}
         {showArrow && (
           <svg

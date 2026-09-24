@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 720" role="img" aria-label="">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00021a"/>
+      <stop offset="0.72" stop-color="#020b20"/>
+      <stop offset="1" stop-color="#123854"/>
+    </linearGradient>
+    <linearGradient id="grid" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#4de8ff" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#3c7ef9" stop-opacity=".08"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="720" fill="url(#sky)"/>
+  <g stroke="url(#grid)" stroke-width="3" fill="none">
+    <path d="M0 560h1920M0 590h1920M0 630h1920M0 680h1920"/>
+    <path d="M960 535 760 720M960 535 520 720M960 535 200 720M960 535 1160 720M960 535 1400 720M960 535 1720 720"/>
+  </g>
+</svg>

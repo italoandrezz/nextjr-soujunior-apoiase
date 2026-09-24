@@ -1,3 +1,5 @@
+import useSpotlight from "../../hooks/useSpotlight";
+
 const iconPaths = {
   community: <path d="M5 19v-2.2A3.8 3.8 0 0 1 8.8 13h6.4a3.8 3.8 0 0 1 3.8 3.8V19M12 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM4 10H2v10h20V10h-2" />,
   mentors: <path d="M3 20v-1.8A4.2 4.2 0 0 1 7.2 14h1.6a4.2 4.2 0 0 1 4.2 4.2V20M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM14 14h2.8a4.2 4.2 0 0 1 4.2 4.2V20M16 11a3 3 0 1 0 0-6" />,
@@ -5,30 +7,11 @@ const iconPaths = {
 };
 
 export default function ParticipationCard({ title, description, icon }) {
-  function handlePointerMove(event) {
-    if (
-      event.pointerType === "touch" ||
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      return;
-    }
-
-    const card = event.currentTarget;
-    const bounds = card.getBoundingClientRect();
-
-    card.style.setProperty("--spotlight-x", `${event.clientX - bounds.left}px`);
-    card.style.setProperty("--spotlight-y", `${event.clientY - bounds.top}px`);
-    card.style.setProperty("--spotlight-opacity", "1");
-  }
-
-  function handlePointerLeave(event) {
-    event.currentTarget.style.setProperty("--spotlight-opacity", "0");
-  }
+  const spotlightProps = useSpotlight();
 
   return (
     <article
-      onPointerMove={handlePointerMove}
-      onPointerLeave={handlePointerLeave}
+      {...spotlightProps}
       className="relative flex min-w-0 flex-col overflow-hidden rounded-xl border border-[#242731] bg-gradient-to-b from-[#080D27] to-[#05091F] p-5 md:min-h-60 md:p-6 lg:min-h-64 lg:p-8"
     >
       <span

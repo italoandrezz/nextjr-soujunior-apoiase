@@ -1,5 +1,6 @@
 import CauseTimelineItem from "./CauseTimeLineItem";
 import Button from "../../components/Button";
+import { APOIA_SE_URL } from "../../constants/links";
 import Typography from "../../components/Typography";
 import businessIcon from "../../assets/images/business.svg";
 import checkCircleIcon from "../../assets/images/check-circle.svg";
@@ -57,7 +58,7 @@ export default function CauseSectionInner() {
             conhecimento vira prática
           </Typography>
         </Typography>
-        <Button href="https://apoia.se/soujunior" variant="light" showArrow>
+        <Button href={APOIA_SE_URL} variant="light" showArrow>
           Apoie agora
         </Button>
       </div>

@@ -1,10 +1,11 @@
 import Typography from '../../components/Typography';
 import Button from '../../components/Button';
 import { AccordionDemo } from '../../components/Accordion';
+import { WHATSAPP_COMMUNITY_URL } from '../../constants/links';
 
 export default function FaqSectionOuter() {
     return (
-        <section id="perguntas-frequentes" className="flex w-full flex-col items-center bg-[#113470] px-4 py-12 md:px-10 md:py-14 lg:px-16">
+        <section id="perguntas-frequentes" className="flex w-full scroll-mt-28 flex-col items-center bg-[#113470] px-4 py-12 md:px-10 md:py-14 lg:px-16">
             <div className="flex w-full max-w-[80rem] flex-col items-center gap-8 md:gap-10">
                 <Typography variant="h2" className="w-full text-center items-center justify-center lg:px-6">
                     Ainda ficou com alguma dúvida?
@@ -13,9 +14,7 @@ export default function FaqSectionOuter() {
                 <AccordionDemo />
                 
                 <Button
-                    href="https://chat.whatsapp.com/JJzCMlqMKlw1YOhOk7QB3W"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={WHATSAPP_COMMUNITY_URL}
                     showSupportAgent
                     className="rounded-[10px] px-5 py-3 text-[12px] text-[#00021A]"
                 >

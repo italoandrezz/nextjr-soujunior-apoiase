@@ -1,48 +1,9 @@
 import Button from "../../components/Button";
 import Typography from "../../components/Typography";
 import supportIllustration from "../../assets/images/illustration-apoiase.png";
+import { APOIA_SE_URL } from "../../constants/links";
+import { participationOptions, supportOptions } from "../../data/siteData";
 import ParticipationCard from "./ParticipationCard";
-
-const APOIA_SE_URL = "https://apoia.se/soujunior";
-
-const participationOptions = [
-  {
-    title: "Comunidade",
-    description:
-      "Contribua e ajude a manter esse espaço disponível para quem também está começando.",
-    icon: "community",
-  },
-  {
-    title: "Mentores e voluntários",
-    description:
-      "Além de compartilhar conhecimento, você também pode ajudar a sustentar um espaço que conecta a nossa comunidade.",
-    icon: "mentors",
-  },
-  {
-    title: "Empresas e patrocinadores",
-    description:
-      "Apoie um ambiente em que novos talentos desenvolvem experiência prática, colaboração e repertório profissional.",
-    icon: "companies",
-  },
-];
-
-const supportOptions = [
-  {
-    value: "A partir de R$ 9/mês",
-    description:
-      "Possibilita a participação dos hackathons online da SouJunior.",
-    recommended: true,
-  },
-  {
-    value: "A partir de R$ 5/mês",
-    description:
-      "Inclui acesso ao Guia Iniciante TI e permite apoiar com valores maiores.",
-  },
-  {
-    value: "A partir de R$ 2/mês",
-    description: "Acesso ao grupo para conhecer os projetos.",
-  },
-];
 
 export default function FacaDiferencaSection() {
   return (
@@ -120,6 +81,10 @@ export default function FacaDiferencaSection() {
             <img
               src={supportIllustration}
               alt="Mascote da SouJunior ao lado de um celular exibindo a campanha no APOIA.se"
+              width="572"
+              height="677"
+              loading="lazy"
+              decoding="async"
               className="h-auto w-full max-w-[20rem] object-contain md:max-w-[24rem] lg:max-w-[31rem]"
             />
           </div>
