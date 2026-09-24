@@ -3,6 +3,8 @@ import Typography from "../../components/Typography";
 import supportIllustration from "../../assets/images/illustration-apoiase.png";
 import ParticipationCard from "./ParticipationCard";
 
+const APOIA_SE_URL = "https://apoia.se/soujunior";
+
 const participationOptions = [
   {
     title: "Comunidade",
@@ -72,10 +74,10 @@ export default function FacaDiferencaSection() {
             {supportOptions.map((option) => (
               <a
                 key={option.value}
-                href="https://apoia.se/soujunior"
+                href={APOIA_SE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${option.value}: apoiar a SouJunior no APOIA.se`}
+                aria-label={`${option.value}. ${option.description} Apoiar a SouJunior no APOIA.se, abre em nova aba.`}
                 className={`block rounded-xl border p-5 transition-colors hover:border-[#22D3EE] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:p-6 ${
                   option.recommended
                     ? "border-[#3C7EF9]/50 bg-gradient-to-r from-[#0A1662]/45 to-[#173871]"
@@ -101,7 +103,7 @@ export default function FacaDiferencaSection() {
               realize o pagamento com segurança.
             </p>
             <Button
-              href="https://apoia.se/soujunior"
+              href={APOIA_SE_URL}
               showArrow
               className="mt-1 w-fit"
             >

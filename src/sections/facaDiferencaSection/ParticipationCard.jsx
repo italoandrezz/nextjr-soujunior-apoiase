@@ -18,19 +18,26 @@ export default function ParticipationCard({ title, description, icon }) {
 
     card.style.setProperty("--spotlight-x", `${event.clientX - bounds.left}px`);
     card.style.setProperty("--spotlight-y", `${event.clientY - bounds.top}px`);
+    card.style.setProperty("--spotlight-opacity", "1");
+  }
+
+  function handlePointerLeave(event) {
+    event.currentTarget.style.setProperty("--spotlight-opacity", "0");
   }
 
   return (
     <article
       onPointerMove={handlePointerMove}
-      className="group relative flex min-w-0 flex-col overflow-hidden rounded-xl border border-[#242731] bg-gradient-to-b from-[#080D27] to-[#05091F] p-5 md:min-h-60 md:p-6 lg:min-h-64 lg:p-8"
+      onPointerLeave={handlePointerLeave}
+      className="relative flex min-w-0 flex-col overflow-hidden rounded-xl border border-[#242731] bg-gradient-to-b from-[#080D27] to-[#05091F] p-5 md:min-h-60 md:p-6 lg:min-h-64 lg:p-8"
     >
       <span
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 motion-reduce:transition-none"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-300 motion-reduce:transition-none"
         style={{
           background:
             "radial-gradient(220px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%), rgba(10, 22, 98, 0.72), transparent 70%)",
+          opacity: "var(--spotlight-opacity, 0)",
         }}
       />
       <span
