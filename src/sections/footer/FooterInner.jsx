@@ -1,54 +1,64 @@
+import discordIcon from "../../assets/images/Discordstates.svg";
+import facebookIcon from "../../assets/images/Facebookstates.svg";
+import githubIcon from "../../assets/images/Githubstates.svg";
+import websiteIcon from "../../assets/images/Globestates.svg";
+import instagramIcon from "../../assets/images/Instagramstates.svg";
+import linkedinIcon from "../../assets/images/Linkedlnstates.svg";
+import logo from "../../assets/images/Logomarca.svg";
+import youtubeIcon from "../../assets/images/Youtubestates.svg";
+import whatsappIcon from "../../assets/images/whatsappstates.png";
+
 export default function FooterInner() {
-  const logoUrl = "/src/assets/images/Logomarca.svg";
+  const logoUrl = logo;
 
   // Lista de redes sociais com ícone e link
   const socialIcons = [
     {
       id: "github",
       label: "GitHub",
-      iconUrl: "/src/assets/images/Githubstates.svg",
+      iconUrl: githubIcon,
       href: "https://github.com/SouJunior"
     },
     {
       id: "discord",
       label: "Discord",
-      iconUrl: "/src/assets/images/Discordstates.svg",
+      iconUrl: discordIcon,
       href: "https://discord.com/invite/soujunior-community-759176734460346423"
     },
     {
       id: "linkedin",
       label: "LinkedIn",
-      iconUrl: "/src/assets/images/Linkedlnstates.svg",
+      iconUrl: linkedinIcon,
       href: "https://www.linkedin.com/company/soujunior/"
     },
     {
       id: "youtube",
       label: "YouTube",
-      iconUrl: "/src/assets/images/Youtubestates.svg",
+      iconUrl: youtubeIcon,
       href: "https://www.youtube.com/@soujuniortech"
     },
     {
       id: "instagram",
       label: "Instagram",
-      iconUrl: "/src/assets/images/Instagramstates.svg",
+      iconUrl: instagramIcon,
       href: "https://www.instagram.com/soujunior.tech/"
     },
     {
       id: "site",
       label: "Website",
-      iconUrl: "/src/assets/images/Globestates.svg",
+      iconUrl: websiteIcon,
       href: "https://www.soujunior.tech/"
     },
     {
       id: "facebook",
       label: "Facebook",
-      iconUrl: "/src/assets/images/Facebookstates.svg",
+      iconUrl: facebookIcon,
       href: "https://www.facebook.com/people/SouJunior/100086671131030/"
     },
     {
       id: "whatsapp",
       label: "Whatsapp",
-      iconUrl: "/src/assets/images/whatsappstates.png",
+      iconUrl: whatsappIcon,
       href: "https://chat.whatsapp.com/JJzCMlqMKlw1YOhOk7QB3W"
     }
   ];
