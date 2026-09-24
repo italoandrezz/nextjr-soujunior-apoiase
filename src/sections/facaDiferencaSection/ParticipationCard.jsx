@@ -5,20 +5,53 @@ const iconPaths = {
 };
 
 export default function ParticipationCard({ title, description, icon }) {
+  function handlePointerMove(event) {
+    if (
+      event.pointerType === "touch" ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    const card = event.currentTarget;
+    const bounds = card.getBoundingClientRect();
+
+    card.style.setProperty("--spotlight-x", `${event.clientX - bounds.left}px`);
+    card.style.setProperty("--spotlight-y", `${event.clientY - bounds.top}px`);
+    card.style.setProperty("--spotlight-opacity", "1");
+  }
+
+  function handlePointerLeave(event) {
+    event.currentTarget.style.setProperty("--spotlight-opacity", "0");
+  }
+
   return (
-    <article className="flex min-w-0 flex-col rounded-xl border border-[#242731] bg-gradient-to-b from-[#080D27] to-[#05091F] p-5 md:min-h-60 md:p-6 lg:min-h-64 lg:p-8">
+    <article
+      onPointerMove={handlePointerMove}
+      onPointerLeave={handlePointerLeave}
+      className="relative flex min-w-0 flex-col overflow-hidden rounded-xl border border-[#242731] bg-gradient-to-b from-[#080D27] to-[#05091F] p-5 md:min-h-60 md:p-6 lg:min-h-64 lg:p-8"
+    >
       <span
         aria-hidden="true"
-        className="flex h-10 w-10 items-center justify-center rounded border border-[#22D3EE] text-[#22D3EE]"
+        className="pointer-events-none absolute inset-0 transition-opacity duration-300 motion-reduce:transition-none"
+        style={{
+          background:
+            "radial-gradient(220px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%), rgba(10, 22, 98, 0.72), transparent 70%)",
+          opacity: "var(--spotlight-opacity, 0)",
+        }}
+      />
+      <span
+        aria-hidden="true"
+        className="relative z-10 flex h-10 w-10 items-center justify-center rounded border border-[#22D3EE] text-[#22D3EE]"
       >
         <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5">
           {iconPaths[icon]}
         </svg>
       </span>
-      <h3 className="mt-5 font-funnel-display text-lg font-bold leading-6 text-[#F4F4F6] lg:text-xl">
+      <h3 className="relative z-10 mt-5 font-funnel-display text-lg font-bold leading-6 text-[#F4F4F6] lg:text-xl">
         {title}
       </h3>
-      <p className="mt-3 font-funnel-sans text-sm leading-5 text-[#A9A9A9] lg:text-base lg:leading-6">
+      <p className="relative z-10 mt-3 font-funnel-sans text-sm leading-5 text-[#A9A9A9] lg:text-base lg:leading-6">
         {description}
       </p>
     </article>

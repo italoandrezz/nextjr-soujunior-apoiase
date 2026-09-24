@@ -7,14 +7,14 @@ export default function HeroSectionOuter() {
       - relative + overflow-hidden: Mantém o vídeo preso dentro da seção
       - min-h-[38.9375rem] = 623px
     */
-    <section id="o-projeto" className="w-full min-h-[38.9375rem] bg-[#030712] relative overflow-hidden flex justify-center items-center py-12 md:py-20 px-4 md:px-20">
+    <section id="inicio" className="w-full min-h-[38.9375rem] bg-[#030712] relative overflow-hidden flex justify-center items-center py-12 md:py-20 px-4 md:px-20">
       {/* 1. VÍDEO DE FUNDO */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full object-cover object-bottom"
       >
         <source src="/src/assets/video/videobackground.mp4" type="video/mp4" />
       </video>
