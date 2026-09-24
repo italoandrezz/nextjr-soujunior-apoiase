@@ -5,7 +5,10 @@ import Typography from "../../components/Typography";
 export default function HeaderInner() {
   return (
     /* Header Inner - Container com largura máxima de 1120px (70rem) */
-    <div className="max-w-[70rem] w-full min-h-[2.5rem] flex items-center justify-between gap-4">
+    <div
+      id="section-header"
+      className="max-w-[70rem] w-full min-h-[2.5rem] flex items-center justify-between gap-4"
+    >
       {/* Logo */}
       <a
         href="/"
@@ -17,23 +20,51 @@ export default function HeaderInner() {
 
       {/* Links de Navegação */}
       <nav className="hidden md:flex items-center gap-8 ml-auto">
-        <a href="#o-projeto" className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]">
-          <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
+        <a
+          href="#o-projeto"
+          className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]"
+        >
+          <Typography
+            variant="nav-header"
+            color="muted"
+            className="transition-colors group-hover:text-white"
+          >
             O projeto
           </Typography>
         </a>
-        <a href="#a-comunidade" className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]">
-          <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
+        <a
+          href="#a-comunidade"
+          className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]"
+        >
+          <Typography
+            variant="nav-header"
+            color="muted"
+            className="transition-colors group-hover:text-white"
+          >
             A comunidade
           </Typography>
         </a>
-        <a href="#como-apoiar" className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]">
-          <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
+        <a
+          href="#como-apoiar"
+          className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]"
+        >
+          <Typography
+            variant="nav-header"
+            color="muted"
+            className="transition-colors group-hover:text-white"
+          >
             Como apoiar
           </Typography>
         </a>
-        <a href="#perguntas-frequentes" className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]">
-          <Typography variant="nav-header" color="muted" className="transition-colors group-hover:text-white">
+        <a
+          href="#perguntas-frequentes"
+          className="group rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]"
+        >
+          <Typography
+            variant="nav-header"
+            color="muted"
+            className="transition-colors group-hover:text-white"
+          >
             Perguntas frequentes
           </Typography>
         </a>
@@ -41,7 +72,12 @@ export default function HeaderInner() {
 
       {/* Botão Apoie Agora */}
       <div>
-        <Button href="https://apoia.se/soujunior" target="_blank" rel="noopener noreferrer" showArrow>
+        <Button
+          href="https://apoia.se/soujunior"
+          target="_blank"
+          rel="noopener noreferrer"
+          showArrow
+        >
           Apoie agora
         </Button>
       </div>
