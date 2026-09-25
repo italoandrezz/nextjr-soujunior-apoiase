@@ -8,6 +8,15 @@ import logo from "../../assets/images/Logomarca.svg";
 import youtubeIcon from "../../assets/images/Youtubestates.svg";
 import whatsappIcon from "../../assets/images/whatsappstates.png";
 
+const githubHoverIcon = "/src/assets/images/githubhover.svg";
+const discordHoverIcon = "/src/assets/images/discordhover.svg";
+const linkedinHoverIcon = "/src/assets/images/Linkdinhover.svg";
+const youtubeHoverIcon = "/src/assets/images/youtubhover.svg";
+const instagramHoverIcon = "/src/assets/images/instagramhover.svg";
+const websiteHoverIcon = "/src/assets/images/globehover.svg";
+const facebookHoverIcon = "/src/assets/images/facebookhover.svg";
+const whatsappHoverIcon = "/src/assets/images/whatsapphover.png";
+
 export default function FooterInner() {
   const logoUrl = logo;
 
@@ -17,48 +26,56 @@ export default function FooterInner() {
       id: "github",
       label: "GitHub",
       iconUrl: githubIcon,
+      hoverIconUrl: githubHoverIcon,
       href: "https://github.com/SouJunior"
     },
     {
       id: "discord",
       label: "Discord",
       iconUrl: discordIcon,
+      hoverIconUrl: discordHoverIcon,
       href: "https://discord.com/invite/soujunior-community-759176734460346423"
     },
     {
       id: "linkedin",
       label: "LinkedIn",
       iconUrl: linkedinIcon,
+      hoverIconUrl: linkedinHoverIcon,
       href: "https://www.linkedin.com/company/soujunior/"
     },
     {
       id: "youtube",
       label: "YouTube",
       iconUrl: youtubeIcon,
+      hoverIconUrl: youtubeHoverIcon,
       href: "https://www.youtube.com/@soujuniortech"
     },
     {
       id: "instagram",
       label: "Instagram",
       iconUrl: instagramIcon,
+      hoverIconUrl: instagramHoverIcon,
       href: "https://www.instagram.com/soujunior.tech/"
     },
     {
       id: "site",
       label: "Website",
       iconUrl: websiteIcon,
+      hoverIconUrl: websiteHoverIcon,
       href: "https://www.soujunior.tech/"
     },
     {
       id: "facebook",
       label: "Facebook",
       iconUrl: facebookIcon,
+      hoverIconUrl: facebookHoverIcon,
       href: "https://www.facebook.com/people/SouJunior/100086671131030/"
     },
     {
       id: "whatsapp",
       label: "Whatsapp",
       iconUrl: whatsappIcon,
+      hoverIconUrl: whatsappHoverIcon,
       href: "https://chat.whatsapp.com/JJzCMlqMKlw1YOhOk7QB3W"
     }
   ];
@@ -108,14 +125,28 @@ export default function FooterInner() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="w-8 h-8 flex items-center justify-center text-[#2fd3f6] hover:opacity-80 transition-opacity"
+                className="group w-8 h-8 flex items-center justify-center"
               >
                 {social.iconUrl ? (
-                  <img
-                    src={social.iconUrl}
-                    alt={social.label}
-                    className="w-full h-full object-contain"
-                  />
+                  <span className="relative w-full h-full">
+                    <img
+                      src={social.iconUrl}
+                      alt={social.label}
+                      className={`w-full h-full object-contain transition-[filter,opacity] duration-200 ${
+                        social.hoverIconUrl
+                          ? "group-hover:opacity-0"
+                          : "brightness-0 invert group-hover:brightness-100 group-hover:invert-0"
+                      }`}
+                    />
+                    {social.hoverIconUrl && (
+                      <img
+                        src={social.hoverIconUrl}
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+                      />
+                    )}
+                  </span>
                 ) : (
                   /* Fallback visual simples caso a imagem não seja carregada */
                   <span className="text-xs font-bold uppercase">
