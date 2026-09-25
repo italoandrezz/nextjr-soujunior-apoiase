@@ -19,11 +19,37 @@ const faqItems = [
     },
     {
         question: 'Como empresas podem apoiar ou se tornar parceiras da SouJunior?',
-        answer: 'Empresas e patrocinadores podem contribuir para a continuidade da comunidade e fortalecer iniciativas que oferecem experiência prática e desenvolvimento de novos talentos em tecnologia. Para parcerias B2B, infraestrutura ou patrocínios, entre em contato pelo e-mail parcerias@soujunior.tech.',
+        answer: (
+            <>
+                Empresas e patrocinadores podem contribuir para a continuidade da comunidade e fortalecer iniciativas que oferecem experiência prática e desenvolvimento de novos talentos em tecnologia. Para parcerias B2B, infraestrutura ou patrocínios,{' '}
+                <a
+                    href="mailto:parcerias@soujunior.tech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-white"
+                >
+                    entre em contato pelo site oficial
+                </a>.
+            </>
+        ),
     },
     {
         question: 'Como posso acompanhar os projetos e o impacto da SouJunior?',
-        answer: 'Você pode acompanhar as iniciativas e conhecer melhor a atuação da comunidade pelo site oficial da SouJunior. Lá estão reunidas informações sobre projetos, áreas de atuação, participação da comunidade e outras formas de acompanhar o que está sendo desenvolvido.',
+        answer: (
+            <>
+                Você pode acompanhar as iniciativas e conhecer melhor a atuação da comunidade&nbsp;
+                <a
+                    href="https://www.soujunior.tech/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-white"
+                >
+                     pelo site oficial da SouJunior
+                </a>.
+                Lá estão reunidas informações sobre projetos, áreas de atuação, participação da comunidade e outras formas de acompanhar o que está sendo desenvolvido.',
+            </>
+        )
+
     },
 ];
 
