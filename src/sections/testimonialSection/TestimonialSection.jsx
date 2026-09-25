@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+
 import Typography from "../../components/Typography";
+
 import { testimonials } from "../../data/testimonials";
 
 const positionClasses = {
@@ -16,6 +18,9 @@ const positionClasses = {
 export default function TestimonialSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const dragStartX = useRef(null);
+  const isDragging = useRef(false);
+
   function showPrevious() {
     setActiveIndex((current) =>
       current === 0 ? testimonials.length - 1 : current - 1,
@@ -23,7 +28,9 @@ export default function TestimonialSection() {
   }
 
   function showNext() {
-    setActiveIndex((current) => (current + 1) % testimonials.length);
+    setActiveIndex(
+      (current) => (current + 1) % testimonials.length,
+    );
   }
 
   function handleKeyDown(event) {
@@ -38,6 +45,39 @@ export default function TestimonialSection() {
     }
   }
 
+  function handlePointerDown(event) {
+    dragStartX.current = event.clientX;
+    isDragging.current = true;
+
+    event.currentTarget.setPointerCapture(event.pointerId);
+  }
+
+  function handlePointerUp(event) {
+    if (!isDragging.current || dragStartX.current === null) {
+      return;
+    }
+
+    const dragDistance = event.clientX - dragStartX.current;
+
+    const swipeThreshold = 50;
+
+    if (Math.abs(dragDistance) >= swipeThreshold) {
+      if (dragDistance > 0) {
+        showPrevious();
+      } else {
+        showNext();
+      }
+    }
+
+    dragStartX.current = null;
+    isDragging.current = false;
+  }
+
+  function handlePointerCancel() {
+    dragStartX.current = null;
+    isDragging.current = false;
+  }
+
   function getCardPosition(index) {
     if (index === activeIndex) return "active";
 
@@ -47,6 +87,7 @@ export default function TestimonialSection() {
     if (forwardDistance === 1) return "next";
     if (forwardDistance === 2) return "nextFar";
     if (forwardDistance === 3) return "previousFar";
+
     return "previous";
   }
 
@@ -56,7 +97,11 @@ export default function TestimonialSection() {
       className="w-full overflow-hidden bg-[#00021A] px-4 py-16 md:px-8 md:py-20 lg:px-20 lg:py-24"
     >
       <div className="mx-auto w-full max-w-[70rem]">
-        <Typography id="testimonial-title" variant="h2" className="text-center">
+        <Typography
+          id="testimonial-title"
+          variant="h2"
+          className="text-center"
+        >
           Quem já passou pela SouJunior
         </Typography>
 
@@ -66,7 +111,10 @@ export default function TestimonialSection() {
           aria-label="Depoimentos de participantes da SouJunior"
           aria-live="polite"
           onKeyDown={handleKeyDown}
-          className="relative mx-auto mt-9 grid max-w-[70rem] perspective-[1200px] md:mt-12"
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerCancel}
+          className="relative mx-auto mt-9 grid max-w-[70rem] touch-pan-y perspective-[1200px] select-none md:mt-12"
         >
           <button
             type="button"
@@ -74,6 +122,7 @@ export default function TestimonialSection() {
             aria-label="Exibir depoimento anterior"
             className="absolute bottom-6 left-0 top-6 z-30 w-[16%] cursor-pointer rounded-l-3xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:bottom-8 md:top-8"
           />
+
           <button
             type="button"
             onClick={showNext}
@@ -102,10 +151,12 @@ export default function TestimonialSection() {
                     height="48"
                     className="h-11 w-11 shrink-0 rounded-full border-2 border-[#D6A868] object-cover md:h-12 md:w-12"
                   />
+
                   <div>
                     <p className="font-funnel-sans text-sm font-bold text-[#F4F4F6] md:text-base">
                       {item.name}
                     </p>
+
                     <p className="mt-0.5 font-funnel-sans text-xs text-[#D4DBEC] md:text-sm">
                       {item.role}
                     </p>

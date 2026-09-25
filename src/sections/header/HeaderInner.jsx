@@ -69,7 +69,7 @@ export default function HeaderInner() {
       </nav>
 
       {/* Botão Apoie Agora */}
-      <div>
+      <div className="">
         <Button href={APOIA_SE_URL} showArrow>
           Apoie agora
         </Button>
