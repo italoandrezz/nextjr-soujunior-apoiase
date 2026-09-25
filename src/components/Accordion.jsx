@@ -23,7 +23,7 @@ const faqItems = [
             <>
                 Empresas e patrocinadores podem contribuir para a continuidade da comunidade e fortalecer iniciativas que oferecem experiência prática e desenvolvimento de novos talentos em tecnologia. Para parcerias B2B, infraestrutura ou patrocínios,{' '}
                 <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=parcerias@soujunior.tech"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=parcerias@soujunior.tech" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline hover:text-white"
