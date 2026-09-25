@@ -125,7 +125,7 @@ export default function FooterInner() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="group w-8 h-8 flex items-center justify-center"
+                className="group flex h-6 w-6 items-center justify-center md:h-8 md:w-8"
               >
                 {social.iconUrl ? (
                   <span className="relative w-full h-full">
