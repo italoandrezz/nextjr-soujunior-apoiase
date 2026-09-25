@@ -78,6 +78,10 @@ export default function TestimonialSection() {
     isDragging.current = false;
   }
 
+  function handleNavigationPointerDown(event) {
+    event.stopPropagation();
+  }
+
   function getCardPosition(index) {
     if (index === activeIndex) return "active";
 
@@ -118,6 +122,7 @@ export default function TestimonialSection() {
         >
           <button
             type="button"
+            onPointerDown={handleNavigationPointerDown}
             onClick={showPrevious}
             aria-label="Exibir depoimento anterior"
             className="absolute bottom-6 left-0 top-6 z-30 w-[16%] cursor-pointer rounded-l-3xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:bottom-8 md:top-8"
@@ -125,6 +130,7 @@ export default function TestimonialSection() {
 
           <button
             type="button"
+            onPointerDown={handleNavigationPointerDown}
             onClick={showNext}
             aria-label="Exibir próximo depoimento"
             className="absolute bottom-6 right-0 top-6 z-30 w-[16%] cursor-pointer rounded-r-3xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:bottom-8 md:top-8"
