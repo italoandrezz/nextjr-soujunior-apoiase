@@ -1,4 +1,4 @@
-import { useId, useState } from 'react';
+import { useId, useState } from "react";
 
 const faqItems = [
     {
@@ -54,49 +54,49 @@ const faqItems = [
 ];
 
 export function AccordionDemo() {
-    const [openIndex, setOpenIndex] = useState(null);
-    const accordionId = useId();
+  const [openIndex, setOpenIndex] = useState(null);
+  const accordionId = useId();
 
-    return (
-        <div className="w-full max-w-[73.25rem]">
-            {faqItems.map((item, index) => {
-                const isOpen = openIndex === index;
-                const triggerId = `${accordionId}-trigger-${index}`;
-                const panelId = `${accordionId}-panel-${index}`;
+  return (
+    <div className="w-full max-w-[73.25rem]">
+      {faqItems.map((item, index) => {
+        const isOpen = openIndex === index;
+        const triggerId = `${accordionId}-trigger-${index}`;
+        const panelId = `${accordionId}-panel-${index}`;
 
-                return (
-                    <div key={item.question} className="border-b border-white/35">
-                        <button
-                            type="button"
-                            id={triggerId}
-                            aria-expanded={isOpen}
-                            aria-controls={panelId}
-                            className="flex w-full items-center justify-between gap-6 rounded-sm py-5 text-left font-funnel-sans text-[16px] font-medium leading-6 text-[#F4F4F6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE] md:px-6 md:py-6 md:text-[18px]"
-                            onClick={() => setOpenIndex(isOpen ? null : index)}
-                        >
-                            <span>{item.question}</span>
-                            <span
-                                aria-hidden="true"
-                                className={`h-2.5 w-2.5 shrink-0 rotate-45 border-b-2 border-r-2 border-[#F4F4F6] transition-transform duration-200 ${isOpen ? '-rotate-[135deg]' : ''}`}
-                            />
-                        </button>
-                        <div
-                            id={panelId}
-                            role="region"
-                            aria-labelledby={triggerId}
-                            aria-hidden={!isOpen}
-                            inert={!isOpen}
-                            className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}
-                        >
-                            <div className="overflow-hidden">
-                                <p className="px-0 pb-6 font-funnel-sans text-[14px] leading-6 text-white/80 md:px-6 md:text-[16px]">
-                                    {item.answer}
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                );
-            })}
-        </div>
-    );
+        return (
+          <div key={item.question} className="border-b border-white/35">
+            <button
+              type="button"
+              id={triggerId}
+              aria-expanded={isOpen}
+              aria-controls={panelId}
+              className="flex w-full cursor-pointer items-center justify-between gap-6 rounded-sm py-5 text-left font-funnel-sans text-[16px] font-medium leading-6 text-[#F4F4F6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE] md:px-6 md:py-6 md:text-[18px]"
+              onClick={() => setOpenIndex(isOpen ? null : index)}
+            >
+              <span>{item.question}</span>
+              <span
+                aria-hidden="true"
+                className={`h-2.5 w-2.5 shrink-0 rotate-45 border-b-2 border-r-2 border-[#F4F4F6] transition-transform duration-200 ${isOpen ? "-rotate-[135deg]" : ""}`}
+              />
+            </button>
+            <div
+              id={panelId}
+              role="region"
+              aria-labelledby={triggerId}
+              aria-hidden={!isOpen}
+              inert={!isOpen}
+              className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+            >
+              <div className="overflow-hidden">
+                <p className="px-0 pb-6 font-funnel-sans text-[14px] leading-6 text-white/80 md:px-6 md:text-[16px]">
+                  {item.answer}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
