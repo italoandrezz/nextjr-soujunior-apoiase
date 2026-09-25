@@ -22,8 +22,8 @@ A aplicação direciona os usuários interessados em contribuir para a campanha 
 ```text
 src/
 ├── assets/
-│   ├── images/
-│   └── video/
+│   ├── ui/
+│   └── layout/
 ├── components/
 ├── constants/
 ├── data/
