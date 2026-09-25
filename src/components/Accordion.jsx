@@ -1,37 +1,56 @@
 import { useId, useState } from "react";
 
 const faqItems = [
-  {
-    question: "O que é o APOIA.se e como funciona minha contribuição?",
-    answer:
-      "O APOIA.se é uma plataforma brasileira de financiamento coletivo utilizada por projetos e iniciativas sociais, educacionais e criativas. É por meio dela que a SouJunior recebe os apoios recorrentes: você escolhe o valor, realiza o pagamento e gerencia sua contribuição diretamente pela plataforma."
-  },
-  {
-    question:
-      "Por que a SouJunior precisa de apoio financeiro e como os recursos são utilizados?",
-    answer:
-      "Mesmo sendo construída por voluntários, a SouJunior precisa manter infraestrutura digital, ferramentas, produtos e projetos ativos. As contribuições ajudam a sustentar esse ecossistema para que profissionais continuem desenvolvendo habilidades e construindo experiência prática."
-  },
-  {
-    question: "Qual é o valor mínimo para apoiar a SouJunior?",
-    answer:
-      "É possível apoiar a partir de R$ 2 por mês. Outros valores podem ser escolhidos diretamente no APOIA.se."
-  },
-  {
-    question: "Como posso participar da SouJunior?",
-    answer:
-      "A SouJunior oferece diferentes formas de atuação dentro da comunidade. É possível participar como Júnior/Mentorado, recebendo acompanhamento e mentoria; como Mentor, apoiando o desenvolvimento dos juniores; como Head, contribuindo voluntariamente com experiência profissional; ou como Apoiador, fortalecendo financeiramente a continuidade dos projetos e iniciativas da comunidade."
-  },
-  {
-    question: "Como empresas podem apoiar ou se tornar parceiras da SouJunior?",
-    answer:
-      "Empresas e patrocinadores podem contribuir para a continuidade da comunidade e fortalecer iniciativas que oferecem experiência prática e desenvolvimento de novos talentos em tecnologia. Para parcerias B2B, infraestrutura ou patrocínios, entre em contato pelo e-mail parcerias@soujunior.tech."
-  },
-  {
-    question: "Como posso acompanhar os projetos e o impacto da SouJunior?",
-    answer:
-      "Você pode acompanhar as iniciativas e conhecer melhor a atuação da comunidade pelo site oficial da SouJunior. Lá estão reunidas informações sobre projetos, áreas de atuação, participação da comunidade e outras formas de acompanhar o que está sendo desenvolvido."
-  }
+    {
+        question: 'O que é o APOIA.se e como funciona minha contribuição?',
+        answer: 'O APOIA.se é uma plataforma brasileira de financiamento coletivo utilizada por projetos e iniciativas sociais, educacionais e criativas. É por meio dela que a SouJunior recebe os apoios recorrentes: você escolhe o valor, realiza o pagamento e gerencia sua contribuição diretamente pela plataforma.',
+    },
+    {
+        question: 'Por que a SouJunior precisa de apoio financeiro e como os recursos são utilizados?',
+        answer: 'Mesmo sendo construída por voluntários, a SouJunior precisa manter infraestrutura digital, ferramentas, produtos e projetos ativos. As contribuições ajudam a sustentar esse ecossistema para que profissionais continuem desenvolvendo habilidades e construindo experiência prática.',
+    },
+    {
+        question: 'Qual é o valor mínimo para apoiar a SouJunior?',
+        answer: 'É possível apoiar a partir de R$ 2 por mês. Outros valores podem ser escolhidos diretamente no APOIA.se.',
+    },
+    {
+        question: 'Como posso participar da SouJunior?',
+        answer: 'A SouJunior oferece diferentes formas de atuação dentro da comunidade. É possível participar como Júnior/Mentorado, recebendo acompanhamento e mentoria; como Mentor, apoiando o desenvolvimento dos juniores; como Head, contribuindo voluntariamente com experiência profissional; ou como Apoiador, fortalecendo financeiramente a continuidade dos projetos e iniciativas da comunidade.',
+    },
+    {
+        question: 'Como empresas podem apoiar ou se tornar parceiras da SouJunior?',
+        answer: (
+            <>
+                Empresas e patrocinadores podem contribuir para a continuidade da comunidade e fortalecer iniciativas que oferecem experiência prática e desenvolvimento de novos talentos em tecnologia. Para parcerias B2B, infraestrutura ou patrocínios,{' '}
+                <a
+                    href="mailto:parcerias@soujunior.tech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-white"
+                >
+                    entre em contato pelo site oficial
+                </a>.
+            </>
+        ),
+    },
+    {
+        question: 'Como posso acompanhar os projetos e o impacto da SouJunior?',
+        answer: (
+            <>
+                Você pode acompanhar as iniciativas e conhecer melhor a atuação da comunidade&nbsp;
+                <a
+                    href="https://www.soujunior.tech/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-white"
+                >
+                     pelo site oficial da SouJunior
+                </a>.
+                Lá estão reunidas informações sobre projetos, áreas de atuação, participação da comunidade e outras formas de acompanhar o que está sendo desenvolvido.',
+            </>
+        )
+
+    },
 ];
 
 export function AccordionDemo() {
