@@ -21,8 +21,9 @@ export default function Button({
 
   // 3. Tamanhos / Paddings
   const sizes = {
-    md: "px-[40px] py-[12px] text-sm", // O primeiro botão (altura aprox. 42px)
-    lg: "px-[32px] py-[16px] text-base gap-2", // O novo botão (altura aprox. 56px)
+    sm: "px-[20px] py-[10px] text-sm gap-2", // Botão menor
+    lg: "px-[32px] py-[16px] text-base gap-2 max-[377px]:px-[20px]", // O novo botão (altura aprox. 56px)
+    md: "px-[40px] py-[12px] text-sm max-[409px]:px-[24px]", // O primeiro botão (altura aprox. 42px)
   };
 
   const finalClasses = `${baseClasses} ${variants[variant] || variants.primary} ${sizes[size] || sizes.md} ${showSupportAgent ? 'gap-2' : ''} ${className}`;
