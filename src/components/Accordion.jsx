@@ -45,7 +45,7 @@ export function AccordionDemo() {
                             id={triggerId}
                             aria-expanded={isOpen}
                             aria-controls={panelId}
-                            className="flex w-full items-center justify-between gap-6 rounded-sm py-5 text-left font-funnel-sans text-[16px] font-medium leading-6 text-[#F4F4F6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE] md:px-6 md:py-6 md:text-[18px]"
+                            className="flex w-full cursor-pointer items-center justify-between gap-6 rounded-sm py-5 text-left font-funnel-sans text-[16px] font-medium leading-6 text-[#F4F4F6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE] md:px-6 md:py-6 md:text-[18px]"
                             onClick={() => setOpenIndex(isOpen ? null : index)}
                         >
                             <span>{item.question}</span>
