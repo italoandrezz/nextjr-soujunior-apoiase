@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nextjr-soujunior-apoiase.vercel.app/sitemap.xml

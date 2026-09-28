@@ -3,6 +3,7 @@ export const campaignGoal = {
   currentAmount: "R$ 767",
   progress: 51.13,
   supporters: 116,
+  referenceDate: "24/09/2026",
 };
 
 export const participationOptions = [

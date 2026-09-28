@@ -34,7 +34,7 @@ describe("FooterInner", () => {
       "Instagram",
       "Website",
       "Facebook",
-      "Whatsapp",
+      "WhatsApp",
     ];
 
     for (const label of socialLabels) {
