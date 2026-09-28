@@ -23,6 +23,9 @@ describe("NossaMetaSection", () => {
 
     expect(screen.getByText(campaignGoal.monthlyGoal)).toBeInTheDocument();
     expect(screen.getByText(/116 apoiadores/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(new RegExp(campaignGoal.referenceDate)),
+    ).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /apoie agora/i })).toHaveAttribute(
       "href",
       "https://apoia.se/soujunior",

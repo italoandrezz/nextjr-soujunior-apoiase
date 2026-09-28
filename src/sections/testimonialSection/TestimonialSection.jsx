@@ -71,6 +71,10 @@ export default function TestimonialSection() {
 
     dragStartX.current = null;
     isDragging.current = false;
+
+    if (event.currentTarget.hasPointerCapture?.(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
+    }
   }
 
   function handlePointerCancel() {
@@ -118,6 +122,7 @@ export default function TestimonialSection() {
           onPointerDown={handlePointerDown}
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerCancel}
+          onLostPointerCapture={handlePointerCancel}
           className="relative mx-auto mt-9 grid max-w-[70rem] touch-pan-y perspective-[1200px] select-none md:mt-12"
         >
           <button

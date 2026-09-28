@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 import HeaderInner from "./HeaderInner";
 
@@ -34,5 +35,31 @@ describe("HeaderInner", () => {
     expect(supportLink).toHaveAttribute("href", "https://apoia.se/soujunior");
     expect(supportLink).toHaveAttribute("target", "_blank");
     expect(supportLink).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
+  it("abre o menu mobile e fecha ao selecionar uma seção", async () => {
+    const user = userEvent.setup();
+    render(<HeaderInner />);
+
+    const menuButton = screen.getByRole("button", { name: /abrir menu/i });
+    await user.click(menuButton);
+
+    expect(menuButton).toHaveAttribute("aria-expanded", "true");
+    expect(screen.getByRole("navigation", { name: /navegação mobile/i })).toBeInTheDocument();
+
+    const projectLinks = screen.getAllByRole("link", { name: "O projeto" });
+    await user.click(projectLinks.at(-1));
+
+    expect(screen.queryByRole("navigation", { name: /navegação mobile/i })).not.toBeInTheDocument();
+  });
+
+  it("fecha o menu mobile com a tecla Escape", async () => {
+    const user = userEvent.setup();
+    render(<HeaderInner />);
+
+    await user.click(screen.getByRole("button", { name: /abrir menu/i }));
+    await user.keyboard("{Escape}");
+
+    expect(screen.queryByRole("navigation", { name: /navegação mobile/i })).not.toBeInTheDocument();
   });
 });

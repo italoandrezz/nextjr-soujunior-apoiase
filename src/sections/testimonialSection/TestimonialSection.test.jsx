@@ -47,4 +47,35 @@ describe("TestimonialSection", () => {
     fireEvent.keyDown(carousel, { key: "ArrowLeft" });
     expect(getVisibleTestimonial(container)).toHaveTextContent(testimonials[0].name);
   });
+
+  it("avança e retorna pelos gestos de arraste", () => {
+    const { container } = render(<TestimonialSection />);
+    const carousel = screen.getByRole("region", {
+      name: /depoimentos de participantes/i,
+    });
+
+    fireEvent.pointerDown(carousel, { clientX: 200, pointerId: 1 });
+    fireEvent.pointerUp(carousel, { clientX: 100, pointerId: 1 });
+    expect(getVisibleTestimonial(container)).toHaveTextContent(testimonials[1].name);
+
+    fireEvent.pointerDown(carousel, { clientX: 100, pointerId: 2 });
+    fireEvent.pointerUp(carousel, { clientX: 200, pointerId: 2 });
+    expect(getVisibleTestimonial(container)).toHaveTextContent(testimonials[0].name);
+  });
+
+  it("ignora movimentos curtos e gestos cancelados", () => {
+    const { container } = render(<TestimonialSection />);
+    const carousel = screen.getByRole("region", {
+      name: /depoimentos de participantes/i,
+    });
+
+    fireEvent.pointerDown(carousel, { clientX: 150, pointerId: 1 });
+    fireEvent.pointerUp(carousel, { clientX: 130, pointerId: 1 });
+    expect(getVisibleTestimonial(container)).toHaveTextContent(testimonials[0].name);
+
+    fireEvent.pointerDown(carousel, { clientX: 200, pointerId: 2 });
+    fireEvent.pointerCancel(carousel, { pointerId: 2 });
+    fireEvent.pointerUp(carousel, { clientX: 100, pointerId: 2 });
+    expect(getVisibleTestimonial(container)).toHaveTextContent(testimonials[0].name);
+  });
 });

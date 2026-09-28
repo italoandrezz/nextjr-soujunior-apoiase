@@ -46,7 +46,7 @@ const faqItems = [
                 >
                      pelo site oficial da SouJunior
                 </a>.
-                Lá estão reunidas informações sobre projetos, áreas de atuação, participação da comunidade e outras formas de acompanhar o que está sendo desenvolvido.',
+                Lá estão reunidas informações sobre projetos, áreas de atuação, participação da comunidade e outras formas de acompanhar o que está sendo desenvolvido.
             </>
         )
 
