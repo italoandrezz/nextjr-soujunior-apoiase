@@ -56,6 +56,9 @@ export default function NossaMetaSection() {
             a sustentar a estrutura necessária para os projetos e iniciativas da
             SouJunior.
           </p>
+          <p className="mt-2 font-funnel-sans text-xs leading-5 text-[#A9A9A9]">
+            Dados da campanha em {campaignGoal.referenceDate}.
+          </p>
         </div>
       </div>
     </section>

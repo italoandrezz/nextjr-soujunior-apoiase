@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">SouJunior</title>
+  <desc id="description">Toda carreira tech precisa de um lugar para começar</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00021A"/>
+      <stop offset="1" stop-color="#102A61"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="100%" r="75%">
+      <stop offset="0" stop-color="#3C7EF9" stop-opacity=".65"/>
+      <stop offset="1" stop-color="#3C7EF9" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(96 82)" fill="#F4F4F6">
+    <rect x="0" y="0" width="24" height="24" rx="4"/>
+    <rect x="28" y="0" width="24" height="24" rx="4"/>
+    <rect x="0" y="28" width="24" height="24" rx="4"/>
+    <rect x="28" y="28" width="24" height="24" rx="4"/>
+    <rect x="17" y="17" width="18" height="18" rx="3" fill="#00021A"/>
+  </g>
+  <text x="168" y="125" fill="#F4F4F6" font-family="Arial, sans-serif" font-size="48" font-weight="600">SouJunior</text>
+  <text x="96" y="300" fill="#F4F4F6" font-family="Arial, sans-serif" font-size="68" font-weight="700">
+    <tspan x="96" dy="0">Toda carreira tech precisa de</tspan>
+    <tspan x="96" dy="82">um lugar para começar</tspan>
+  </text>
+  <text x="96" y="500" fill="#D4DBEC" font-family="Arial, sans-serif" font-size="30">Projetos reais, colaboração e experiência para novos talentos.</text>
+  <rect x="96" y="548" width="230" height="8" rx="4" fill="#22D3EE"/>
+</svg>
