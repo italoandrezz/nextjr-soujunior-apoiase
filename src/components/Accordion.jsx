@@ -22,13 +22,14 @@ const faqItems = [
         answer: (
             <>
                 Empresas e patrocinadores podem contribuir para a continuidade da comunidade e fortalecer iniciativas que oferecem experiência prática e desenvolvimento de novos talentos em tecnologia. Para parcerias B2B, infraestrutura ou patrocínios,{' '}
+                entre em contato pelo e-mail{' '}
                 <a
                     href="mailto:parcerias@soujunior.tech"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline hover:text-white"
                 >
-                    entre em contato pelo site oficial
+                    parcerias@soujunior.tech
                 </a>.
             </>
         ),
