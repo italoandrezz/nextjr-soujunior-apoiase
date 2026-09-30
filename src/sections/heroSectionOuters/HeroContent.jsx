@@ -23,6 +23,7 @@ export default function HeroContent() {
         href={APOIA_SE_URL}
         variant="light" 
         size="lg"
+        className="max-md:px-5 max-md:py-3 max-md:text-xs"
         showArrow
       >
         <span>Quero apoiar</span>
