@@ -8,7 +8,7 @@ export default function CauseTimelineItem({
   isLast
 }) {
   return (
-    <div className={`relative z-10 flex min-h-[132px] w-full items-start gap-6 min-[500px]:min-h-[138px] min-[500px]:gap-7 ${isLast ? '' : 'pb-16'}`}>
+    <div className={`relative z-10 flex w-full items-start gap-6 min-[500px]:gap-7 ${isLast ? '' : 'min-h-[132px] min-[500px]:min-h-[138px] pb-16'}`}>
       {!isLast && (
         <div className="absolute left-[18px] top-[52px] z-0 h-16 w-px bg-white/35 min-[500px]:left-[21px] min-[500px]:top-[58px]" />
       )}
@@ -24,6 +24,7 @@ export default function CauseTimelineItem({
         <Typography
           variant="body-semibold"
           as="h3"
+          className="max-md:font-funnel-display md:font-funnel-display"
         >
           {title}
         </Typography>

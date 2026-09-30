@@ -15,9 +15,8 @@ describe("CauseSectionOuter", () => {
     expect(
       screen.getByRole("heading", { name: /chega preparado ao mercado/i }),
     ).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /apoie agora/i })).toHaveAttribute(
-      "href",
-      APOIA_SE_URL,
-    );
+    for (const link of screen.getAllByRole("link", { name: /apoie agora/i })) {
+      expect(link).toHaveAttribute("href", APOIA_SE_URL);
+    }
   });
 });
