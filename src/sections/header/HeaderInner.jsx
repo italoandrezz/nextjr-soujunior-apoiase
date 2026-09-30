@@ -36,7 +36,7 @@ export default function HeaderInner() {
   return (
     /* Header Inner - Container com largura máxima de 1120px (70rem) */
     <div
-      className="relative flex min-h-[2.5rem] w-full max-w-[70rem] items-center justify-between gap-3 md:gap-8"
+      className="relative flex min-h-[2.5rem] w-full max-w-[70rem] items-center justify-between gap-3 md:gap-4 lg:gap-8"
       onKeyDown={(event) => {
         if (event.key === "Escape") setIsMenuOpen(false);
       }}
@@ -45,19 +45,19 @@ export default function HeaderInner() {
       <a
         href="#inicio"
         aria-label="Ir para o início"
-        className="flex items-center gap-2 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE]"
+        className="flex items-center gap-2 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:max-lg:shrink-0"
       >
         <img src={logo} alt="SouJunior" className="h-8 w-auto" />
       </a>
 
       {/* Links de Navegação */}
-      <nav aria-label="Navegação principal" className="ml-auto hidden items-center gap-8 md:flex">
+      <nav aria-label="Navegação principal" className="ml-auto hidden items-center gap-8 md:flex md:max-lg:gap-3 md:max-lg:whitespace-nowrap">
         <NavigationLinks />
       </nav>
 
-      <div className="ml-auto flex items-center gap-3 md:ml-0">
+      <div className="ml-auto flex items-center gap-3 md:ml-0 md:max-lg:shrink-0">
         <div className="max-[479px]:hidden">
-          <Button href={APOIA_SE_URL} showArrow>
+          <Button href={APOIA_SE_URL} showArrow className="md:max-lg:whitespace-nowrap md:max-lg:px-5">
             Apoie agora
           </Button>
         </div>
