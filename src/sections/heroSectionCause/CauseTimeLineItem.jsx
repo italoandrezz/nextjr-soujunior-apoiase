@@ -24,6 +24,7 @@ export default function CauseTimelineItem({
         <Typography
           variant="body-semibold"
           as="h3"
+          className="md:font-funnel-display"
         >
           {title}
         </Typography>
