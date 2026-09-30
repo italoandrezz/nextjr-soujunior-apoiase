@@ -18,7 +18,7 @@ export default function HeaderOuter() {
   return (
     /* Header Outer - Estrutura Principal de Layout */
     <header
-      className={`sticky top-0 z-50 flex w-full items-center justify-center border-b px-4 py-8 transition-[background-color,border-color,backdrop-filter] duration-300 md:px-20 ${
+      className={`sticky top-0 z-50 flex w-full items-center justify-center border-b px-4 py-8 transition-[background-color,border-color,backdrop-filter] duration-300 md:px-8 lg:px-20 ${
         isScrolled
           ? "border-white/5 bg-[#00011A]/80 backdrop-blur-md"
           : "border-transparent bg-[#00011A]"

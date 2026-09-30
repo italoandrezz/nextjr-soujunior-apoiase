@@ -22,13 +22,14 @@ const faqItems = [
         answer: (
             <>
                 Empresas e patrocinadores podem contribuir para a continuidade da comunidade e fortalecer iniciativas que oferecem experiência prática e desenvolvimento de novos talentos em tecnologia. Para parcerias B2B, infraestrutura ou patrocínios,{' '}
+                entre em contato pelo e-mail{' '}
                 <a
                     href="mailto:parcerias@soujunior.tech"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline hover:text-white"
                 >
-                    entre em contato pelo site oficial
+                    parcerias@soujunior.tech
                 </a>.
             </>
         ),
@@ -71,7 +72,7 @@ export function AccordionDemo() {
               id={triggerId}
               aria-expanded={isOpen}
               aria-controls={panelId}
-              className="flex w-full cursor-pointer items-center justify-between gap-6 rounded-sm py-5 text-left font-funnel-sans text-[16px] font-medium leading-6 text-[#F4F4F6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE] md:px-6 md:py-6 md:text-[18px]"
+              className="flex w-full cursor-pointer items-center justify-between gap-6 rounded-sm py-5 text-left font-funnel-sans max-md:font-funnel-display text-[16px] font-medium leading-6 text-[#F4F4F6] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#22D3EE] md:px-6 md:py-6 md:text-[18px]"
               onClick={() => setOpenIndex(isOpen ? null : index)}
             >
               <span>{item.question}</span>
@@ -89,7 +90,7 @@ export function AccordionDemo() {
               className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
             >
               <div className="overflow-hidden">
-                <p className="px-0 pb-6 font-funnel-sans text-[14px] leading-6 text-white/80 md:px-6 md:text-[16px]">
+                <p className="px-0 pb-6 font-funnel-sans text-[14px] leading-6 text-white/80 max-md:text-[#F4F4F6] md:px-6 md:text-[16px]">
                   {item.answer}
                 </p>
               </div>

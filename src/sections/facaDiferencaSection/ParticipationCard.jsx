@@ -34,7 +34,7 @@ export default function ParticipationCard({ title, description, icon }) {
       <h3 className="relative z-10 mt-5 font-funnel-display text-lg font-bold leading-6 text-[#F4F4F6] lg:text-xl">
         {title}
       </h3>
-      <p className="relative z-10 mt-3 font-funnel-sans text-sm leading-5 text-[#A9A9A9] lg:text-base lg:leading-6">
+      <p className="relative z-10 mt-3 font-funnel-sans text-sm leading-5 text-[#F4F4F6] lg:text-base lg:leading-6">
         {description}
       </p>
     </article>

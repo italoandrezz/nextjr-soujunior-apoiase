@@ -91,11 +91,11 @@ export default function FooterInner() {
         {/* Footer Brand */}
         <div className="flex flex-col items-center md:items-start gap-8 max-w-[885px] w-full">
           {/* Footer Logo */}
-          <div className="flex items-center gap-2 h-[52.21px]">
+          <div className="flex items-center gap-2 h-[20.79px] w-[132.9px] md:h-[52.21px] md:w-auto">
             <img
               src={logo}
               alt="SouJunior"
-              className="h-full object-contain"
+              className="h-full w-full object-contain md:w-auto"
             />
           </div>
 
@@ -106,7 +106,7 @@ export default function FooterInner() {
           </p>
 
           {/* Social Icons */}
-          <div className="flex items-center gap-6 flex-wrap">
+          <div className="grid grid-cols-4 items-center gap-6 md:flex md:flex-wrap">
             {socialIcons.map((social) => (
               <a
                 key={social.id}
