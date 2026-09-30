@@ -51,12 +51,12 @@ export default function NossaMetaSection() {
             {campaignGoal.progress.toLocaleString("pt-BR")}% ({campaignGoal.currentAmount}) da
             meta de R$ 1.500/mês, graças a {campaignGoal.supporters} apoiadores.
           </p>
-          <p className="mt-4 max-w-[36rem] font-funnel-sans text-xs leading-5 text-[#A9A9A9] md:text-sm md:leading-6">
+          <p className="mt-4 max-w-[36rem] font-funnel-sans text-xs leading-5 text-[#A9A9A9] md:text-[#F4F4F6] md:text-sm md:leading-6">
             Para essa experiência continuar acontecendo, esse valor mensal ajuda
             a sustentar a estrutura necessária para os projetos e iniciativas da
             SouJunior.
           </p>
-          <p className="mt-2 font-funnel-sans text-xs leading-5 text-[#A9A9A9]">
+          <p className="mt-2 font-funnel-sans text-xs leading-5 text-[#A9A9A9] md:text-[#F4F4F6]">
             Dados da campanha em {campaignGoal.referenceDate}.
           </p>
         </div>

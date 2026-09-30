@@ -20,7 +20,7 @@ export default function FacaDiferencaSection() {
         >
           Faça a diferença na SouJunior
         </Typography>
-        <p className="mt-3 font-funnel-sans text-xs font-semibold uppercase leading-4 tracking-[0.04em] text-[#A9A9A9] md:text-sm">
+        <p className="mt-3 font-funnel-sans text-xs font-semibold uppercase leading-4 tracking-[0.04em] text-[#A9A9A9] md:text-[#F4F4F6] md:text-sm">
           Escolha como fazer parte desse movimento
         </p>
 
@@ -54,17 +54,17 @@ export default function FacaDiferencaSection() {
                       Recomendado
                     </p>
                   )}
-                  <h3 className="font-funnel-display text-base font-semibold leading-6 text-[#F4F4F6] md:text-lg">
+                  <h3 className="font-funnel-display text-base font-semibold leading-6 text-[#F4F4F6] md:text-xl">
                     {option.value}
                   </h3>
-                  <p className="mt-2 font-funnel-sans text-sm leading-5 text-[#A9A9A9] transition-colors duration-300 group-hover:text-[#F4F4F6]">
+                  <p className="mt-2 font-funnel-sans text-sm leading-5 text-[#A9A9A9] md:text-[#F4F4F6] md:text-base md:leading-6 transition-colors duration-300 group-hover:text-[#F4F4F6]">
                     {option.description}
                   </p>
                 </div>
               </a>
             ))}
 
-            <p className="mt-2 max-w-[32rem] font-funnel-sans text-xs leading-5 text-[#A9A9A9] md:text-sm">
+            <p className="mt-2 max-w-[32rem] font-funnel-sans text-xs leading-5 text-[#A9A9A9] md:text-[#F4F4F6] md:text-base md:leading-6">
               Quer contribuir com outro valor? Escolha diretamente no APOIA.se e
               realize o pagamento com segurança.
             </p>
