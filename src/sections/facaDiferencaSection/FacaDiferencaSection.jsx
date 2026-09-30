@@ -20,7 +20,7 @@ export default function FacaDiferencaSection() {
         >
           Faça a diferença na SouJunior
         </Typography>
-        <p className="mt-3 font-funnel-sans text-xs font-semibold uppercase leading-4 tracking-[0.04em] text-[#A9A9A9] md:text-[#F4F4F6] md:text-sm">
+        <p className="mt-3 font-funnel-sans text-xs font-semibold uppercase leading-4 tracking-[0.04em] text-[#F4F4F6] md:text-sm">
           Escolha como fazer parte desse movimento
         </p>
 
