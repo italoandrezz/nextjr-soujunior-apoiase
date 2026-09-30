@@ -31,7 +31,7 @@ export default function CauseSectionInner() {
     {
       id: 4,
       title: "O júnior vive a rotina de verdade",
-      description: "Squad, cerimônias ágeis e feedback de mentor — o que curso nenhum ensina",
+      description: <>{"Squad, cerimônias ágeis e feedback de mentor — "}<span className="max-md:block">o que curso nenhum ensina</span></>,
       iconSrc: flowchartIcon
     },
     {
@@ -52,13 +52,13 @@ export default function CauseSectionInner() {
         >
           Seu apoio pode ser a primeira oportunidade de alguém
         </Typography>
-        <Typography variant="body-sm" as="p" className="max-w-[22rem]">
+        <Typography variant="body-sm" as="p" className="max-w-[22rem] max-md:text-[14px] max-md:leading-5">
           Ao apoiar a SouJunior, você impulsiona um ambiente onde{' '}
-          <Typography variant="body-sm" color="yellow" as="strong">
+          <Typography variant="body-sm" color="yellow" as="strong" className="max-md:text-[14px] max-md:leading-5">
             conhecimento vira prática
           </Typography>
         </Typography>
-        <Button href={APOIA_SE_URL} variant="light" showArrow>
+        <Button href={APOIA_SE_URL} variant="light" showArrow className="max-md:hidden">
           Apoie agora
         </Button>
       </div>
@@ -74,6 +74,9 @@ export default function CauseSectionInner() {
             isLast={item.id === timelineData.length}
           />
         ))}
+        <Button href={APOIA_SE_URL} variant="light" showArrow className="mt-6 self-start px-5 py-3 text-xs md:hidden">
+          Apoie agora
+        </Button>
       </div>
     </div>
   );
