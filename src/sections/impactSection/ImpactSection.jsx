@@ -44,7 +44,7 @@ export default function ImpactSection() {
             O que acontece quando oportunidades ganham espaço
           </Typography>
 
-          <p className="mx-auto max-w-[29rem] font-funnel-sans text-sm leading-5 text-[#A9A9A9] md:text-[#F4F4F6] md:mx-0 md:justify-self-end md:pt-2 md:text-base md:leading-6">
+          <p className="mx-auto max-w-[29rem] font-funnel-sans text-sm leading-5 text-[#F4F4F6] md:mx-0 md:justify-self-end md:pt-2 md:text-base md:leading-6">
             Cada número carrega uma jornada de aprendizado prático,
             colaboração em equipe e desenvolvimento para o mercado.
           </p>

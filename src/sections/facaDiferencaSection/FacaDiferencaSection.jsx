@@ -44,7 +44,7 @@ export default function FacaDiferencaSection() {
                 aria-label={`${option.value}. ${option.description} Apoiar a SouJunior no APOIA.se, abre em nova aba.`}
                 className={`group relative block overflow-hidden rounded-xl border p-5 transition-colors duration-300 before:absolute before:inset-0 before:bg-[rgba(60,126,249,0.72)] before:opacity-0 before:transition-opacity before:duration-300 hover:border-[#22D3EE] hover:before:opacity-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#22D3EE] md:p-6 ${
                   option.recommended
-                    ? "border-[#3C7EF9]/50 bg-gradient-to-r from-[#0A1662]/45 to-[#173871]"
+                    ? "border-[#242731] md:border-[#3C7EF9]/50 max-md:hover:border-[#242731] bg-gradient-to-r from-[#0A1662]/45 to-[#173871]"
                     : "border-[#242731] bg-gradient-to-r from-[#080D27] to-[#102A61]"
                 }`}
               >
@@ -57,14 +57,14 @@ export default function FacaDiferencaSection() {
                   <h3 className="font-funnel-display text-base font-semibold leading-6 text-[#F4F4F6] md:text-xl">
                     {option.value}
                   </h3>
-                  <p className="mt-2 font-funnel-sans text-sm leading-5 text-[#A9A9A9] md:text-[#F4F4F6] md:text-base md:leading-6 transition-colors duration-300 group-hover:text-[#F4F4F6]">
+                  <p className="mt-2 font-funnel-sans text-sm leading-5 text-[#F4F4F6] md:text-base md:leading-6 transition-colors duration-300 group-hover:text-[#F4F4F6]">
                     {option.description}
                   </p>
                 </div>
               </a>
             ))}
 
-            <p className="mt-2 max-w-[32rem] font-funnel-sans text-xs leading-5 text-[#A9A9A9] md:text-[#F4F4F6] md:text-base md:leading-6">
+            <p className="mt-2 max-w-[32rem] font-funnel-sans text-xs leading-5 text-[#F4F4F6] md:text-base md:leading-6">
               Quer contribuir com outro valor? Escolha diretamente no APOIA.se e
               realize o pagamento com segurança.
             </p>
